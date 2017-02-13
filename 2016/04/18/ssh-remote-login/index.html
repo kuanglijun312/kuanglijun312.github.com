@@ -6,23 +6,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="android,ios,javascript,html,css">
-    <meta name="keyword" content="undefined">
+    <meta name="description" content="邝利军在 Github 上的个人博客">
+    <meta name="keyword" content="Helen 邝利军 小邝 Harley javascript css">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
     <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="Helen" href="/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="我的博客" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        ssh远程登录服务器｜undefined
+        ssh远程登录服务器｜Helen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="https://kuanglijun312.github.io/2016/04/18/ssh-remote-login/">
+    <link rel="canonical" href="http://kuanglijun312.github.io/2016/04/18/ssh-remote-login/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
 <style>
 
     header.intro-header {
-        background-image: url('undefined')
+        background-image: url('/images/logo.png')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -56,7 +56,7 @@
             </button>
             <a class="navbar-brand animated pulse" href="/">
                 <span class="brand-logo">
-                    Helen
+                    我的博客
                 </span>
                 's Blog
             </a>
@@ -148,7 +148,7 @@
                     <h1>ssh远程登录服务器</h1>
                     
                     <span class="meta">
-                         作者 Lijun Kuang
+                         作者 Kuang Lijun
                         <span>
                           日期 2016-04-18
                          </span>
@@ -185,30 +185,30 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h3 id="在mac或者Linux上登录"><a href="#在mac或者Linux上登录" class="headerlink" title="在mac或者Linux上登录"></a>在mac或者Linux上登录</h3><p>使用以下命令:<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -p 22 username@111.13.101.208</div></pre></td></tr></table></figure></p>
+                <h3 id="在mac或者Linux上登录"><a href="#在mac或者Linux上登录" class="headerlink" title="在mac或者Linux上登录"></a>在mac或者Linux上登录</h3><p>使用以下命令:<br><figure class="highlight sh"><table><tr><td class="code"><pre><div class="line">ssh -p 22 username@111.13.101.208</div></pre></td></tr></table></figure></p>
 <p>其中 22 是端口号(可以更改的，如果没有修改端口号，可以不输入-p 22),请替换对应的端口号, 111.13.101.208是对应的ip;<br>输入密码即可登录</p>
 <h3 id="免密码登录"><a href="#免密码登录" class="headerlink" title="免密码登录"></a>免密码登录</h3><ol>
 <li><p>本机电脑<br> 需要生产ssh-keychain; 检查 ~/.ssh 是否存在，不存在，使用以下命令生成</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><div class="line">ssh-keygen -t rsa</div></pre></td></tr></table></figure>
 <p> 其中提示输入密码，可以输入空，当然可以输入别的，之后在 个人目录 ~ 下，就会生产.ssh文件夹，里面会有id_rsa  id_rsa.pub ,对应私钥, 公钥，其中id_rsa.pub使我们需要的;复制id_rsa.pub里的内容</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">cat id_rsa.pub</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><div class="line">cat id_rsa.pub</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p>复制内容；</p>
 <ol>
-<li>配置服务器<br>  先登录上服务器; 编辑 服务器的 ~/.ssh/auth_key  （其中auth_key可能不是这个名字，可以修改，在对应的ssh的配置文件中）<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi ~/.ssh/auth_key</div></pre></td></tr></table></figure>
+<li>配置服务器<br>  先登录上服务器; 编辑 服务器的 ~/.ssh/auth_key  （其中auth_key可能不是这个名字，可以修改，在对应的ssh的配置文件中）<figure class="highlight sh"><table><tr><td class="code"><pre><div class="line">vi ~/.ssh/auth_key</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>添加本机id_rsa.pub的内容，即可；<br>这样就可以<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh -p 22 username@111.13.101.208</div></pre></td></tr></table></figure></p>
+<p>添加本机id_rsa.pub的内容，即可；<br>这样就可以<br><figure class="highlight sh"><table><tr><td class="code"><pre><div class="line">ssh -p 22 username@111.13.101.208</div></pre></td></tr></table></figure></p>
 <p>不需要密码登录了</p>
 <ol>
 <li><p>快捷登录方式<br> 以上密码还需要输入ip，有时候还需要输入端口，太长了，也不好记；便可以自定义名字；<br> 本机电脑: 在 ~/.ssh/ 目录下 新建 config 文件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">vi ~/.ssh/config</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><div class="line">vi ~/.ssh/config</div></pre></td></tr></table></figure>
 <p> 输入以下</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Host custom-name</div><div class="line">    HostName ip</div><div class="line">    User username</div><div class="line">    Port 22</div></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="code"><pre><div class="line">Host custom-name</div><div class="line">    HostName ip</div><div class="line">    User username</div><div class="line">    Port 22</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>其中 custom-name 自定义的文件，比如 208 , home 等任何合法的字符都可以<br>ip 即对于的ip地址<br>username 即登录的用户名<br>22 就是端口号，默认端口可以不配置<br>配置好以上，可以使用以下命令登录(以Host为 208 为例)<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ssh 208</div></pre></td></tr></table></figure></p>
+<p>其中 custom-name 自定义的文件，比如 208 , home 等任何合法的字符都可以<br>ip 即对于的ip地址<br>username 即登录的用户名<br>22 就是端口号，默认端口可以不配置<br>配置好以上，可以使用以下命令登录(以Host为 208 为例)<br><figure class="highlight sh"><table><tr><td class="code"><pre><div class="line">ssh 208</div></pre></td></tr></table></figure></p>
 <p>即可以登录到服务器了</p>
 <p>以上是mac或者linux上</p>
 <h3 id="windows上，需要安装软件"><a href="#windows上，需要安装软件" class="headerlink" title="windows上，需要安装软件"></a>windows上，需要安装软件</h3><p><a href="http://www.putty.org/" target="_blank" rel="external">PuTTY</a>, 或者<br><a href="http://www.htpcbeginner.com/best-ssh-clients-windows-putty-alternatives/2/" target="_blank" rel="external">10 best SSH Clients for Windows: free alternatives to PuTTY</a></p>
@@ -254,8 +254,39 @@
 
                 <!-- Featured Tags -->
                 
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#ssh"
+                           title="ssh">ssh</a>
+                        
+                        <a class="tag" href="/tags/#server"
+                           title="server">server</a>
+                        
+                        <a class="tag" href="/tags/#linux"
+                           title="linux">linux</a>
+                        
+                        <a class="tag" href="/tags/#mac"
+                           title="mac">mac</a>
+                        
+                    </div>
+                </section>
+                
 
                 <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="http://bumaociyuan.github.io/">不毛次元</a></li>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -279,18 +310,45 @@
                 
                 
                 
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
 
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Helen 2017
+                    Copyright &copy; 我的博客 2017
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
@@ -327,7 +385,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
+        async("http://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -359,13 +417,13 @@
   e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
   })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','undefined','2.0.0');
+  _st('install','null','2.0.0');
 </script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="undefined">
+<img class="wechat-title-img" src="null">
 </body>
 
 </html>

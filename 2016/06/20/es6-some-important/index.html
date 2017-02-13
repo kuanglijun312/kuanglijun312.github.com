@@ -6,23 +6,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="android,ios,javascript,html,css">
-    <meta name="keyword" content="undefined">
+    <meta name="description" content="邝利军在 Github 上的个人博客">
+    <meta name="keyword" content="Helen 邝利军 小邝 Harley javascript css">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
     <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="Helen" href="/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="我的博客" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        es6一些常用的｜undefined
+        es6一些常用的｜Helen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="https://kuanglijun312.github.io/2016/06/20/es6-some-important/">
+    <link rel="canonical" href="http://kuanglijun312.github.io/2016/06/20/es6-some-important/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
 <style>
 
     header.intro-header {
-        background-image: url('undefined')
+        background-image: url('/images/logo.png')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -56,7 +56,7 @@
             </button>
             <a class="navbar-brand animated pulse" href="/">
                 <span class="brand-logo">
-                    Helen
+                    我的博客
                 </span>
                 's Blog
             </a>
@@ -148,18 +148,18 @@
                     <h1>es6一些常用的</h1>
                     
                     <span class="meta">
-                         作者 Lijun Kuang
+                         作者 Kuang Lijun
                         <span>
                           日期 2016-06-20
                          </span>
                     </span>
                     <div class="tags text-center">
                         
-                        <a class="tag" href="/tags/#js"
-                           title="js">js</a>
-                        
                         <a class="tag" href="/tags/#es6"
                            title="es6">es6</a>
+                        
+                        <a class="tag" href="/tags/#js"
+                           title="js">js</a>
                         
                     </div>
                 </div>
@@ -185,7 +185,7 @@
 <li>使用 …; 例如: let {name = ‘’,…ohterInfo} = {name=”kuanglijun”,avatar:’<a href="http://kuanglijun312.github.io/img/logo.png&#39;,nickname=&quot;harley&quot;}">http://kuanglijun312.github.io/img/logo.png&#39;,nickname=&quot;harley&quot;}</a>;</li>
 <li>函数使用默认参数，例如showLoading = (msg = ‘正在加载中…’) { … other code; }</li>
 <li><p>普通对象赋值，比如: </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>,b =<span class="number">2</span>; </div><div class="line"><span class="keyword">let</span> obj = &#123;a,b&#125;;  <span class="comment">//result is obj = &#123;a: 1,b:2 &#125;;</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>,b =<span class="number">2</span>; </div><div class="line"><span class="keyword">let</span> obj = &#123;a,b&#125;;  <span class="comment">//result is obj = &#123;a: 1,b:2 &#125;;</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>object.assign , array.map等等常用的方法</p>
 </li>
@@ -193,7 +193,7 @@
 <li>Promise, function* ,yield的使用<a id="more"></a>
 </li>
 </ol>
-<p>tips:<br>Object.assign，一些浏览器含有，一些没有，需要引用 ‘babel-polyfill’; 如果没有，请用下面的代码处理<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">assign: <span class="function"><span class="keyword">function</span> (<span class="params">target</span>) </span>&#123;</div><div class="line"><span class="meta">        'use strict'</span>;</div><div class="line">        <span class="keyword">if</span> (target === <span class="literal">undefined</span> || target === <span class="literal">null</span>) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Cannot convert undefined or null to object'</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> output = <span class="built_in">Object</span>(target);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> index = <span class="number">1</span>; index &lt; <span class="built_in">arguments</span>.length; index++) &#123;</div><div class="line">            <span class="keyword">var</span> source = <span class="built_in">arguments</span>[index];</div><div class="line">            <span class="keyword">if</span> (source !== <span class="literal">undefined</span> &amp;&amp; source !== <span class="literal">null</span>) &#123;</div><div class="line">              <span class="keyword">for</span> (<span class="keyword">var</span> nextKey <span class="keyword">in</span> source) &#123;</div><div class="line">                <span class="keyword">if</span> (source.hasOwnProperty(nextKey)) &#123;</div><div class="line">                  output[nextKey] = source[nextKey];</div><div class="line">                &#125;</div><div class="line">              &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> output;</div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
+<p>tips:<br>Object.assign，一些浏览器含有，一些没有，需要引用 ‘babel-polyfill’; 如果没有，请用下面的代码处理<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">assign: <span class="function"><span class="keyword">function</span> (<span class="params">target</span>) </span>&#123;</div><div class="line"><span class="meta">        'use strict'</span>;</div><div class="line">        <span class="keyword">if</span> (target === <span class="literal">undefined</span> || target === <span class="literal">null</span>) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Cannot convert undefined or null to object'</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> output = <span class="built_in">Object</span>(target);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> index = <span class="number">1</span>; index &lt; <span class="built_in">arguments</span>.length; index++) &#123;</div><div class="line">            <span class="keyword">var</span> source = <span class="built_in">arguments</span>[index];</div><div class="line">            <span class="keyword">if</span> (source !== <span class="literal">undefined</span> &amp;&amp; source !== <span class="literal">null</span>) &#123;</div><div class="line">              <span class="keyword">for</span> (<span class="keyword">var</span> nextKey <span class="keyword">in</span> source) &#123;</div><div class="line">                <span class="keyword">if</span> (source.hasOwnProperty(nextKey)) &#123;</div><div class="line">                  output[nextKey] = source[nextKey];</div><div class="line">                &#125;</div><div class="line">              &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> output;</div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
 
                 <hr>
                 
@@ -236,8 +236,33 @@
 
                 <!-- Featured Tags -->
                 
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#es6"
+                           title="es6">es6</a>
+                        
+                        <a class="tag" href="/tags/#js"
+                           title="js">js</a>
+                        
+                    </div>
+                </section>
+                
 
                 <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="http://bumaociyuan.github.io/">不毛次元</a></li>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -261,18 +286,45 @@
                 
                 
                 
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
 
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Helen 2017
+                    Copyright &copy; 我的博客 2017
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
@@ -309,7 +361,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
+        async("http://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -341,13 +393,13 @@
   e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
   })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','undefined','2.0.0');
+  _st('install','null','2.0.0');
 </script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="undefined">
+<img class="wechat-title-img" src="null">
 </body>
 
 </html>

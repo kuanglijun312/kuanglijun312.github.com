@@ -6,23 +6,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="android,ios,javascript,html,css">
-    <meta name="keyword" content="undefined">
+    <meta name="description" content="邝利军在 Github 上的个人博客">
+    <meta name="keyword" content="Helen 邝利军 小邝 Harley javascript css">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
     <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="Helen" href="/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="我的博客" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        webpack使用｜undefined
+        webpack使用｜Helen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="https://kuanglijun312.github.io/2016/06/21/webpack/">
+    <link rel="canonical" href="http://kuanglijun312.github.io/2016/06/21/webpack/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
 <style>
 
     header.intro-header {
-        background-image: url('undefined')
+        background-image: url('/images/logo.png')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -56,7 +56,7 @@
             </button>
             <a class="navbar-brand animated pulse" href="/">
                 <span class="brand-logo">
-                    Helen
+                    我的博客
                 </span>
                 's Blog
             </a>
@@ -148,7 +148,7 @@
                     <h1>webpack使用</h1>
                     
                     <span class="meta">
-                         作者 Lijun Kuang
+                         作者 Kuang Lijun
                         <span>
                           日期 2016-06-21
                          </span>
@@ -183,8 +183,8 @@
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <h3 id="webpack简介"><a href="#webpack简介" class="headerlink" title="webpack简介"></a>webpack简介</h3><p>web端模块打包工具；参考: <a href="http://www.w3ctech.com/topic/1557" target="_blank" rel="external">webpack 入门及实践</a>, <a href="http://zhizhi.betahouse.us/2015/09/27/yi-webpackde-demos/" target="_blank" rel="external">webpack 的 demos</a>,<a href="http://wwsun.github.io/posts/react-with-es6-part-1.html" target="_blank" rel="external">使用ES6编写React应用（1）：简介及环境配置</a>等等;<br><a id="more"></a></p>
-<p>基础知识参考上面的链接;<br>下面是我的一些配置，支持实时刷新，已经部分说明,项目地址：<a href="https://github.com/kuanglijun312/myWebpackDemo" target="_blank" rel="external">myWebpackDemo</a><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div></pre></td><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line">var webpack = require(&apos;webpack&apos;);</div><div class="line"></div><div class="line"></div><div class="line">var ExtractTextPlugin = require(&apos;extract-text-webpack-plugin&apos;);</div><div class="line">var CopyWebpackPlugin = require(&apos;copy-webpack-plugin&apos;);</div><div class="line"></div><div class="line">var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        index: [&apos;webpack-dev-server/client?http://127.0.0.1:8083/&apos;,&apos;webpack/hot/dev-server&apos;,&apos;babel-polyfill&apos;,</div><div class="line">             &apos;./src/index.js&apos;]</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: path.resolve(__dirname, &apos;build&apos;),</div><div class="line">        filename: &quot;[name].js&quot;,</div><div class="line">        publicPath: &apos;http://127.0.0.1:8083/build/&apos;,</div><div class="line">        outputPath: path.join(__dirname, &apos;dist&apos;)</div><div class="line">    &#125;,</div><div class="line">    devServer: &#123;</div><div class="line">        inline:true,</div><div class="line">        hot: true,</div><div class="line">        port: 8083,</div><div class="line">        progress: true,</div><div class="line">        headers: &#123;</div><div class="line">            &quot;Access-Control-Allow-Origin&quot;: &quot;*&quot;,</div><div class="line">        &#125;,</div><div class="line">        contentBase: &apos;./src&apos;</div><div class="line">      &#125;,</div><div class="line">    resolve: &#123;</div><div class="line">        extensions: [&quot;&quot;, &quot;.js&quot;,&quot;.jsx&quot;, &quot;.css&quot;, &quot;.styl&quot;],</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        loaders: [&#123;</div><div class="line">          test: /\.jsx?$/, </div><div class="line">          loader: &apos;babel-loader&apos;,</div><div class="line">          exclude:/node_modules/,</div><div class="line">          query:</div><div class="line">            &#123;</div><div class="line">                presets:[&apos;es2015&apos;,&apos;stage-2&apos;]</div><div class="line">            &#125;</div><div class="line">        &#125;, &#123;</div><div class="line">          test: /\.css$/, // Only .css files</div><div class="line">          exclude:/node_modules/,</div><div class="line">          // loader: &apos;style!css&apos;,</div><div class="line">          loader: process.env.NODE_ENV == &apos;production&apos; ?  ExtractTextPlugin.extract(&quot;style-loader&quot;, &quot;css-loader&quot;): &apos;style!css&apos; // Run both loaders</div><div class="line">          // loader: ExtractTextPlugin.extract(&quot;style-loader&quot;, &quot;css-loader&quot;)</div><div class="line">        &#125;,&#123;</div><div class="line">          test:   /\.styl$/,</div><div class="line">          exclude:/node_modules/,</div><div class="line">          // loader:&apos;style-loader!css-loader!stylus-loader&apos;,</div><div class="line">          loader: process.env.NODE_ENV == &apos;production&apos; ? ExtractTextPlugin.extract(&quot;style-loader&quot;, &quot;css-loader!stylus-loader&quot;) : &apos;style-loader!css-loader!stylus-loader&apos;</div><div class="line">            // loader: ExtractTextPlugin.extract(&quot;style-loader&quot;, &quot;css-loader!stylus-loader&quot;)</div><div class="line">        &#125;, &#123;</div><div class="line">          test: /\.(png|jpg)$/,</div><div class="line">          exclude:/node_modules/,</div><div class="line">          loader: &apos;url?limit=25000&apos;</div><div class="line">        &#125;</div><div class="line">    ]&#125;,</div><div class="line">      stylus: &#123;</div><div class="line">          use: [require(&apos;nib&apos;)()],</div><div class="line">          import: [&apos;~nib/lib/nib/index.styl&apos;]</div><div class="line">        &#125;,</div><div class="line">      plugins: [</div><div class="line">        new webpack.HotModuleReplacementPlugin(),</div><div class="line">        new webpack.NoErrorsPlugin()</div><div class="line">        </div><div class="line">       ].concat(process.env.NODE_ENV == &apos;production&apos; ? new uglifyJsPlugin(&#123;</div><div class="line">          compress: &#123;</div><div class="line">            warnings: false</div><div class="line">          &#125;</div><div class="line">        &#125;) : [])</div><div class="line">       .concat(process.env.NODE_ENV == &apos;production&apos; ? new CopyWebpackPlugin([&#123;from: &apos;src/*.html&apos;&#125;,&#123;from:&apos;build&apos;&#125;]) : [])</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-<p>部分说明: extract-text-webpack-plugin, copy-webpack-plugin; 请查相关资料；<br>首先这个项目需要<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">npm i -save webpack babel-core babel-loader babel-polyfill babel-preset-es2015 babel-preset-stage-2 css-loader file-loader extract-text-webpack-plugin stylus url-loader copy-webpack-plugin webpack-dev-server</div></pre></td></tr></table></figure></p>
+<p>基础知识参考上面的链接;<br>下面是我的一些配置，支持实时刷新，已经部分说明,项目地址：<a href="https://github.com/kuanglijun312/myWebpackDemo" target="_blank" rel="external">myWebpackDemo</a><br><figure class="highlight plain"><table><tr><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line">var webpack = require(&apos;webpack&apos;);</div><div class="line"></div><div class="line"></div><div class="line">var ExtractTextPlugin = require(&apos;extract-text-webpack-plugin&apos;);</div><div class="line">var CopyWebpackPlugin = require(&apos;copy-webpack-plugin&apos;);</div><div class="line"></div><div class="line">var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        index: [&apos;webpack-dev-server/client?http://127.0.0.1:8083/&apos;,&apos;webpack/hot/dev-server&apos;,&apos;babel-polyfill&apos;,</div><div class="line">             &apos;./src/index.js&apos;]</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: path.resolve(__dirname, &apos;build&apos;),</div><div class="line">        filename: &quot;[name].js&quot;,</div><div class="line">        publicPath: &apos;http://127.0.0.1:8083/build/&apos;,</div><div class="line">        outputPath: path.join(__dirname, &apos;dist&apos;)</div><div class="line">    &#125;,</div><div class="line">    devServer: &#123;</div><div class="line">        inline:true,</div><div class="line">        hot: true,</div><div class="line">        port: 8083,</div><div class="line">        progress: true,</div><div class="line">        headers: &#123;</div><div class="line">            &quot;Access-Control-Allow-Origin&quot;: &quot;*&quot;,</div><div class="line">        &#125;,</div><div class="line">        contentBase: &apos;./src&apos;</div><div class="line">      &#125;,</div><div class="line">    resolve: &#123;</div><div class="line">        extensions: [&quot;&quot;, &quot;.js&quot;,&quot;.jsx&quot;, &quot;.css&quot;, &quot;.styl&quot;],</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        loaders: [&#123;</div><div class="line">          test: /\.jsx?$/, </div><div class="line">          loader: &apos;babel-loader&apos;,</div><div class="line">          exclude:/node_modules/,</div><div class="line">          query:</div><div class="line">            &#123;</div><div class="line">                presets:[&apos;es2015&apos;,&apos;stage-2&apos;]</div><div class="line">            &#125;</div><div class="line">        &#125;, &#123;</div><div class="line">          test: /\.css$/, // Only .css files</div><div class="line">          exclude:/node_modules/,</div><div class="line">          // loader: &apos;style!css&apos;,</div><div class="line">          loader: process.env.NODE_ENV == &apos;production&apos; ?  ExtractTextPlugin.extract(&quot;style-loader&quot;, &quot;css-loader&quot;): &apos;style!css&apos; // Run both loaders</div><div class="line">          // loader: ExtractTextPlugin.extract(&quot;style-loader&quot;, &quot;css-loader&quot;)</div><div class="line">        &#125;,&#123;</div><div class="line">          test:   /\.styl$/,</div><div class="line">          exclude:/node_modules/,</div><div class="line">          // loader:&apos;style-loader!css-loader!stylus-loader&apos;,</div><div class="line">          loader: process.env.NODE_ENV == &apos;production&apos; ? ExtractTextPlugin.extract(&quot;style-loader&quot;, &quot;css-loader!stylus-loader&quot;) : &apos;style-loader!css-loader!stylus-loader&apos;</div><div class="line">            // loader: ExtractTextPlugin.extract(&quot;style-loader&quot;, &quot;css-loader!stylus-loader&quot;)</div><div class="line">        &#125;, &#123;</div><div class="line">          test: /\.(png|jpg)$/,</div><div class="line">          exclude:/node_modules/,</div><div class="line">          loader: &apos;url?limit=25000&apos;</div><div class="line">        &#125;</div><div class="line">    ]&#125;,</div><div class="line">      stylus: &#123;</div><div class="line">          use: [require(&apos;nib&apos;)()],</div><div class="line">          import: [&apos;~nib/lib/nib/index.styl&apos;]</div><div class="line">        &#125;,</div><div class="line">      plugins: [</div><div class="line">        new webpack.HotModuleReplacementPlugin(),</div><div class="line">        new webpack.NoErrorsPlugin()</div><div class="line">        </div><div class="line">       ].concat(process.env.NODE_ENV == &apos;production&apos; ? new uglifyJsPlugin(&#123;</div><div class="line">          compress: &#123;</div><div class="line">            warnings: false</div><div class="line">          &#125;</div><div class="line">        &#125;) : [])</div><div class="line">       .concat(process.env.NODE_ENV == &apos;production&apos; ? new CopyWebpackPlugin([&#123;from: &apos;src/*.html&apos;&#125;,&#123;from:&apos;build&apos;&#125;]) : [])</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<p>部分说明: extract-text-webpack-plugin, copy-webpack-plugin; 请查相关资料；<br>首先这个项目需要<br><figure class="highlight bash"><table><tr><td class="code"><pre><div class="line">npm i -save webpack babel-core babel-loader babel-polyfill babel-preset-es2015 babel-preset-stage-2 css-loader file-loader extract-text-webpack-plugin stylus url-loader copy-webpack-plugin webpack-dev-server</div></pre></td></tr></table></figure></p>
 <p>如果需要reactjs请添加： babel-preset-react</p>
 <p>其中比较困惑的地方在于output的publicPath，这个就是最后引用的js的地址，比如这个例子,index.js要访问到，就需要<a href="http://127.0.0.1:8083/build/index.js" target="_blank" rel="external">http://127.0.0.1:8083/build/index.js</a>;</p>
 
@@ -229,8 +229,36 @@
 
                 <!-- Featured Tags -->
                 
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#nodejs"
+                           title="nodejs">nodejs</a>
+                        
+                        <a class="tag" href="/tags/#react"
+                           title="react">react</a>
+                        
+                        <a class="tag" href="/tags/#webpack"
+                           title="webpack">webpack</a>
+                        
+                    </div>
+                </section>
+                
 
                 <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="http://bumaociyuan.github.io/">不毛次元</a></li>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -254,18 +282,45 @@
                 
                 
                 
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
 
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Helen 2017
+                    Copyright &copy; 我的博客 2017
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
@@ -302,7 +357,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
+        async("http://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -334,13 +389,13 @@
   e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
   })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','undefined','2.0.0');
+  _st('install','null','2.0.0');
 </script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="undefined">
+<img class="wechat-title-img" src="null">
 </body>
 
 </html>

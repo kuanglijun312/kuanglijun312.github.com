@@ -6,23 +6,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="android,ios,javascript,html,css">
-    <meta name="keyword" content="undefined">
+    <meta name="description" content="邝利军在 Github 上的个人博客">
+    <meta name="keyword" content="Helen 邝利军 小邝 Harley javascript css">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
     <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="Helen" href="/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="我的博客" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        stylus使用｜undefined
+        stylus使用｜Helen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="https://kuanglijun312.github.io/2016/06/20/stylus-use/">
+    <link rel="canonical" href="http://kuanglijun312.github.io/2016/06/20/stylus-use/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
 <style>
 
     header.intro-header {
-        background-image: url('undefined')
+        background-image: url('/images/logo.png')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -56,7 +56,7 @@
             </button>
             <a class="navbar-brand animated pulse" href="/">
                 <span class="brand-logo">
-                    Helen
+                    我的博客
                 </span>
                 's Blog
             </a>
@@ -148,7 +148,7 @@
                     <h1>stylus使用</h1>
                     
                     <span class="meta">
-                         作者 Lijun Kuang
+                         作者 Kuang Lijun
                         <span>
                           日期 2016-06-20
                          </span>
@@ -186,16 +186,16 @@
 <li><p>&amp;的使用， 字符&amp;指向父选择器</p>
 </li>
 <li><p>定义变量，例如</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="attribute">font-size</span>-<span class="number">12</span>=<span class="number">1.2rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">13</span>=<span class="number">1.3rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">14</span>=<span class="number">1.4rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">16</span>=<span class="number">1.6rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">18</span>=<span class="number">1.8rem</span></div></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="attribute">font-size</span>-<span class="number">12</span>=<span class="number">1.2rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">13</span>=<span class="number">1.3rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">14</span>=<span class="number">1.4rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">16</span>=<span class="number">1.6rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">18</span>=<span class="number">1.8rem</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>使用同级或者上级的变量</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.my-select-arrow</span></div><div class="line">    <span class="attribute">width</span> <span class="number">12px</span> </div><div class="line">    <span class="attribute">height</span> <span class="number">20px</span></div><div class="line">    <span class="attribute">background-size</span> @width @height</div><div class="line">    <span class="attribute">margin-top</span> -<span class="number">12px</span></div></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.my-select-arrow</span></div><div class="line">    <span class="attribute">width</span> <span class="number">12px</span> </div><div class="line">    <span class="attribute">height</span> <span class="number">20px</span></div><div class="line">    <span class="attribute">background-size</span> @width @height</div><div class="line">    <span class="attribute">margin-top</span> -<span class="number">12px</span></div></pre></td></tr></table></figure>
 </li>
 <li><p>自定义函数</p>
-<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//底部加红色条动画</div><div class="line">func_hover_bottom_spread(sel,bgcolor = #ed2c2c)</div><div class="line">    &#123;sel&#125;</div><div class="line">        cursor pointer</div><div class="line">        position relative</div><div class="line">        padding-top 6px</div><div class="line">        padding-bottom 6px</div><div class="line">        &amp;:before,&amp;:after</div><div class="line">            content ' '</div><div class="line">            absolute bottom 0</div><div class="line">            height 2px</div><div class="line">            background-color bgcolor</div><div class="line">            width 0</div><div class="line">            transition all .2s animate-func-bezier</div><div class="line">            transform-style preserve-3d</div><div class="line">            backface-visibility hidden</div><div class="line">        &amp;:before</div><div class="line">            left 50%</div><div class="line">        &amp;:after</div><div class="line">            right 50%</div><div class="line">        @media big</div><div class="line">            &amp;:hover::before,&amp;:hover::after</div><div class="line">                width 50%</div></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">//底部加红色条动画</div><div class="line">func_hover_bottom_spread(sel,bgcolor = #ed2c2c)</div><div class="line">    &#123;sel&#125;</div><div class="line">        cursor pointer</div><div class="line">        position relative</div><div class="line">        padding-top 6px</div><div class="line">        padding-bottom 6px</div><div class="line">        &amp;:before,&amp;:after</div><div class="line">            content ' '</div><div class="line">            absolute bottom 0</div><div class="line">            height 2px</div><div class="line">            background-color bgcolor</div><div class="line">            width 0</div><div class="line">            transition all .2s animate-func-bezier</div><div class="line">            transform-style preserve-3d</div><div class="line">            backface-visibility hidden</div><div class="line">        &amp;:before</div><div class="line">            left 50%</div><div class="line">        &amp;:after</div><div class="line">            right 50%</div><div class="line">        @media big</div><div class="line">            &amp;:hover::before,&amp;:hover::after</div><div class="line">                width 50%</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>使用:<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="title">func_hover_bottom_spread</span><span class="params">(<span class="string">'.action-hover-bottom-spread'</span>)</span></span> <span class="comment">//对所有的action-hover-bottom-spread,都会有该动画</span></div></pre></td></tr></table></figure></p>
+<p>使用:<br><figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="title">func_hover_bottom_spread</span><span class="params">(<span class="string">'.action-hover-bottom-spread'</span>)</span></span> <span class="comment">//对所有的action-hover-bottom-spread,都会有该动画</span></div></pre></td></tr></table></figure></p>
 <p>对选择器使用 {}；</p>
 
                 <hr>
@@ -239,8 +239,33 @@
 
                 <!-- Featured Tags -->
                 
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#stylus"
+                           title="stylus">stylus</a>
+                        
+                        <a class="tag" href="/tags/#css"
+                           title="css">css</a>
+                        
+                    </div>
+                </section>
+                
 
                 <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="http://bumaociyuan.github.io/">不毛次元</a></li>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -264,18 +289,45 @@
                 
                 
                 
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
 
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Helen 2017
+                    Copyright &copy; 我的博客 2017
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
@@ -312,7 +364,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
+        async("http://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -344,13 +396,13 @@
   e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
   })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','undefined','2.0.0');
+  _st('install','null','2.0.0');
 </script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="undefined">
+<img class="wechat-title-img" src="null">
 </body>
 
 </html>

@@ -6,23 +6,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="android,ios,javascript,html,css">
-    <meta name="keyword" content="undefined">
+    <meta name="description" content="邝利军在 Github 上的个人博客">
+    <meta name="keyword" content="Helen 邝利军 小邝 Harley javascript css">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
     <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="Helen" href="/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="我的博客" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        stylus一些使用示例｜undefined
+        stylus一些使用示例｜Helen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="https://kuanglijun312.github.io/2016/06/20/stylus-demo/">
+    <link rel="canonical" href="http://kuanglijun312.github.io/2016/06/20/stylus-demo/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
 <style>
 
     header.intro-header {
-        background-image: url('undefined')
+        background-image: url('/images/logo.png')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -56,7 +56,7 @@
             </button>
             <a class="navbar-brand animated pulse" href="/">
                 <span class="brand-logo">
-                    Helen
+                    我的博客
                 </span>
                 's Blog
             </a>
@@ -148,7 +148,7 @@
                     <h1>stylus一些使用示例</h1>
                     
                     <span class="meta">
-                         作者 Lijun Kuang
+                         作者 Kuang Lijun
                         <span>
                           日期 2016-06-20
                          </span>
@@ -181,22 +181,22 @@
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
                 <p>承接上篇文章<a href="http://kuanglijun312.github.io/2016/06/20/stylus-use/">stylus使用</a><br>同时对reactjs笔记的样式补充<br><a id="more"></a></p>
 <ol>
-<li>material input (结构参考reactjs的笔记)<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div></pre></td><td class="code"><pre><div class="line">.material-input-wrap</div><div class="line">    text-align center</div><div class="line">    position relative</div><div class="line">    margin-top 35px</div><div class="line">    .input-content</div><div class="line">        width 100%</div><div class="line">        border none</div><div class="line">        border-bottom color-border-bottom 2px solid</div><div class="line">        height 40px</div><div class="line">        line-height 40px</div><div class="line">        text-align inherit</div><div class="line">        &amp;:focus ~ .input-label</div><div class="line">            color color-red</div><div class="line">        &amp;:focus ~ .input-label,&amp;:valid ~ .input-label</div><div class="line">            top -15px</div><div class="line">            font-weight 300</div><div class="line">            transform translate3d(0,0,0) scale(0.7)</div><div class="line">        &amp;:focus ~ .bar:before,&amp;:focus ~ .bar:after</div><div class="line">            width 50%</div><div class="line">    .input-label</div><div class="line">        absolute left 0 top 17px</div><div class="line">        color color-gray</div><div class="line">        width 100%</div><div class="line">        font-size font-size-14</div><div class="line">        font-weight 300</div><div class="line">        transition all .2s animate-func-bezier</div><div class="line">        backface-visibility hidden</div><div class="line">        transform-style preserve-3d</div><div class="line">        pointer-events none</div><div class="line">    .bar</div><div class="line">        absolute left 0 bottom 0</div><div class="line">        width 100%</div><div class="line">        cursor default</div><div class="line">        &amp;:before,&amp;:after</div><div class="line">            content ''</div><div class="line">            height 2px</div><div class="line">            width 0</div><div class="line">            absolute bottom 0</div><div class="line">            background-color color-red</div><div class="line">            transition all .2s animate-func-bezier</div><div class="line">        &amp;:before</div><div class="line">            left 50%</div><div class="line">        &amp;:after</div><div class="line">            right 50%</div></pre></td></tr></table></figure>
+<li>material input (结构参考reactjs的笔记)<figure class="highlight"><table><tr><td class="code"><pre><div class="line">.material-input-wrap</div><div class="line">    text-align center</div><div class="line">    position relative</div><div class="line">    margin-top 35px</div><div class="line">    .input-content</div><div class="line">        width 100%</div><div class="line">        border none</div><div class="line">        border-bottom color-border-bottom 2px solid</div><div class="line">        height 40px</div><div class="line">        line-height 40px</div><div class="line">        text-align inherit</div><div class="line">        &amp;:focus ~ .input-label</div><div class="line">            color color-red</div><div class="line">        &amp;:focus ~ .input-label,&amp;:valid ~ .input-label</div><div class="line">            top -15px</div><div class="line">            font-weight 300</div><div class="line">            transform translate3d(0,0,0) scale(0.7)</div><div class="line">        &amp;:focus ~ .bar:before,&amp;:focus ~ .bar:after</div><div class="line">            width 50%</div><div class="line">    .input-label</div><div class="line">        absolute left 0 top 17px</div><div class="line">        color color-gray</div><div class="line">        width 100%</div><div class="line">        font-size font-size-14</div><div class="line">        font-weight 300</div><div class="line">        transition all .2s animate-func-bezier</div><div class="line">        backface-visibility hidden</div><div class="line">        transform-style preserve-3d</div><div class="line">        pointer-events none</div><div class="line">    .bar</div><div class="line">        absolute left 0 bottom 0</div><div class="line">        width 100%</div><div class="line">        cursor default</div><div class="line">        &amp;:before,&amp;:after</div><div class="line">            content ''</div><div class="line">            height 2px</div><div class="line">            width 0</div><div class="line">            absolute bottom 0</div><div class="line">            background-color color-red</div><div class="line">            transition all .2s animate-func-bezier</div><div class="line">        &amp;:before</div><div class="line">            left 50%</div><div class="line">        &amp;:after</div><div class="line">            right 50%</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><img src="/img/input-normal.png" alt="input-normal.png"> <img src="/img/input-focus.png" alt="input-focus.png"> <img src="/img/input-validate.png" alt="input-validate.png"></p>
 <ol>
-<li>checkbox,radio的样式<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">.checkbox-wrap,.radio-wrap</div><div class="line">    color color-black</div><div class="line">    display inline-block</div><div class="line">    position relative</div><div class="line">    cursor pointer</div><div class="line">    .input-checkbox,.input-radio</div><div class="line">        margin 0</div><div class="line">        margin-right 10px</div><div class="line">        vertical-align top</div><div class="line">        opacity 0</div><div class="line">    em</div><div class="line">        vertical-align middle</div><div class="line">    em:before</div><div class="line">        content ''</div><div class="line">        absolute left 0px top -1px</div><div class="line">        width 16px</div><div class="line">        height 16px</div><div class="line">        border 1px solid color-black</div><div class="line">        box-sizing border-box</div><div class="line">        padding 3px</div><div class="line">    em:after</div><div class="line">        content ''</div><div class="line">        z-index 1</div><div class="line">        absolute left 3px top 2px</div><div class="line">        width 10px</div><div class="line">        height 10px</div><div class="line">        backface-visibility hidden</div><div class="line">        transform-style preserve-3d</div><div class="line">        transition all .2s animate-func-bezier</div><div class="line">        transform translate3d(0,0,0) scale(0)</div><div class="line">        background #fff</div><div class="line">    input:checked + em:after</div><div class="line">        transform translate3d(0,0,0) scale(1)</div><div class="line">        background color-red</div></pre></td></tr></table></figure>
+<li>checkbox,radio的样式<figure class="highlight"><table><tr><td class="code"><pre><div class="line">.checkbox-wrap,.radio-wrap</div><div class="line">    color color-black</div><div class="line">    display inline-block</div><div class="line">    position relative</div><div class="line">    cursor pointer</div><div class="line">    .input-checkbox,.input-radio</div><div class="line">        margin 0</div><div class="line">        margin-right 10px</div><div class="line">        vertical-align top</div><div class="line">        opacity 0</div><div class="line">    em</div><div class="line">        vertical-align middle</div><div class="line">    em:before</div><div class="line">        content ''</div><div class="line">        absolute left 0px top -1px</div><div class="line">        width 16px</div><div class="line">        height 16px</div><div class="line">        border 1px solid color-black</div><div class="line">        box-sizing border-box</div><div class="line">        padding 3px</div><div class="line">    em:after</div><div class="line">        content ''</div><div class="line">        z-index 1</div><div class="line">        absolute left 3px top 2px</div><div class="line">        width 10px</div><div class="line">        height 10px</div><div class="line">        backface-visibility hidden</div><div class="line">        transform-style preserve-3d</div><div class="line">        transition all .2s animate-func-bezier</div><div class="line">        transform translate3d(0,0,0) scale(0)</div><div class="line">        background #fff</div><div class="line">    input:checked + em:after</div><div class="line">        transform translate3d(0,0,0) scale(1)</div><div class="line">        background color-red</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><img src="/img/checkbox-uncheck.png" alt="checkbox-uncheck.png"> <img src="/img/checkbox-checked.png" alt="checkbox-checked.png"></p>
 <ol>
-<li>面包条,后面加 / <figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">.breadcrumbs-wrap</div><div class="line">    diplay inline-block</div><div class="line">    li</div><div class="line">        display inline-block</div><div class="line">        font-size font-size-12</div><div class="line">        a</div><div class="line">            color color-gray</div><div class="line">            transition all .2s</div><div class="line">            @media big</div><div class="line">                &amp;:hover</div><div class="line">                    color color-black</div><div class="line">        a:after</div><div class="line">            content '/'</div><div class="line">            font-size 80%</div><div class="line">            display inline-block</div><div class="line">            vertical-align middle</div><div class="line">            padding 0 3px</div><div class="line">        span</div><div class="line">            color color-black</div></pre></td></tr></table></figure>
+<li>面包条,后面加 / <figure class="highlight"><table><tr><td class="code"><pre><div class="line">.breadcrumbs-wrap</div><div class="line">    diplay inline-block</div><div class="line">    li</div><div class="line">        display inline-block</div><div class="line">        font-size font-size-12</div><div class="line">        a</div><div class="line">            color color-gray</div><div class="line">            transition all .2s</div><div class="line">            @media big</div><div class="line">                &amp;:hover</div><div class="line">                    color color-black</div><div class="line">        a:after</div><div class="line">            content '/'</div><div class="line">            font-size 80%</div><div class="line">            display inline-block</div><div class="line">            vertical-align middle</div><div class="line">            padding 0 3px</div><div class="line">        span</div><div class="line">            color color-black</div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><img src="/img/breadcrumbs.png" alt="breadcrumbs.png"></p>
 <ol>
-<li>省市区联动<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.city-link-wrap</span></div><div class="line">    <span class="selector-class">.my-select-wrap</span></div><div class="line">        <span class="attribute">margin-right</span> <span class="number">3%</span></div><div class="line">        <span class="attribute">border-bottom</span> <span class="number">2px</span> solid color-border-bottom</div><div class="line">        <span class="attribute">width</span> <span class="number">30%</span></div><div class="line">        &amp;:last-child</div><div class="line">            <span class="attribute">margin-right</span> <span class="number">0</span></div><div class="line">        @media middlesmall</div><div class="line">            <span class="attribute">width</span> <span class="number">100%</span></div><div class="line">            <span class="attribute">margin-bottom</span> <span class="number">20px</span></div><div class="line">            &amp;:last-child</div><div class="line">                <span class="attribute">margin-bottom</span> <span class="number">0</span></div></pre></td></tr></table></figure>
+<li>省市区联动<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.city-link-wrap</span></div><div class="line">    <span class="selector-class">.my-select-wrap</span></div><div class="line">        <span class="attribute">margin-right</span> <span class="number">3%</span></div><div class="line">        <span class="attribute">border-bottom</span> <span class="number">2px</span> solid color-border-bottom</div><div class="line">        <span class="attribute">width</span> <span class="number">30%</span></div><div class="line">        &amp;:last-child</div><div class="line">            <span class="attribute">margin-right</span> <span class="number">0</span></div><div class="line">        @media middlesmall</div><div class="line">            <span class="attribute">width</span> <span class="number">100%</span></div><div class="line">            <span class="attribute">margin-bottom</span> <span class="number">20px</span></div><div class="line">            &amp;:last-child</div><div class="line">                <span class="attribute">margin-bottom</span> <span class="number">0</span></div></pre></td></tr></table></figure>
 </li>
 </ol>
 <p><img src="/img/link-city.png" alt="link-city.png"></p>
@@ -242,8 +242,33 @@
 
                 <!-- Featured Tags -->
                 
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#stylus"
+                           title="stylus">stylus</a>
+                        
+                        <a class="tag" href="/tags/#css"
+                           title="css">css</a>
+                        
+                    </div>
+                </section>
+                
 
                 <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="http://bumaociyuan.github.io/">不毛次元</a></li>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -267,18 +292,45 @@
                 
                 
                 
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
 
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Helen 2017
+                    Copyright &copy; 我的博客 2017
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
@@ -315,7 +367,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
+        async("http://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -347,13 +399,13 @@
   e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
   })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','undefined','2.0.0');
+  _st('install','null','2.0.0');
 </script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="undefined">
+<img class="wechat-title-img" src="null">
 </body>
 
 </html>

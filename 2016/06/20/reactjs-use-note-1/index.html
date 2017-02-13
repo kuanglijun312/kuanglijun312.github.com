@@ -6,23 +6,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="android,ios,javascript,html,css">
-    <meta name="keyword" content="undefined">
+    <meta name="description" content="邝利军在 Github 上的个人博客">
+    <meta name="keyword" content="Helen 邝利军 小邝 Harley javascript css">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
     <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="Helen" href="/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="我的博客" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        reactjs使用笔记1｜undefined
+        reactjs使用笔记1｜Helen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="https://kuanglijun312.github.io/2016/06/20/reactjs-use-note-1/">
+    <link rel="canonical" href="http://kuanglijun312.github.io/2016/06/20/reactjs-use-note-1/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
 <style>
 
     header.intro-header {
-        background-image: url('undefined')
+        background-image: url('/images/logo.png')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -56,7 +56,7 @@
             </button>
             <a class="navbar-brand animated pulse" href="/">
                 <span class="brand-logo">
-                    Helen
+                    我的博客
                 </span>
                 's Blog
             </a>
@@ -148,7 +148,7 @@
                     <h1>reactjs使用笔记1</h1>
                     
                     <span class="meta">
-                         作者 Lijun Kuang
+                         作者 Kuang Lijun
                         <span>
                           日期 2016-06-20
                          </span>
@@ -184,13 +184,13 @@
 <a id="more"></a>
 <h3 id="reactjs使用中遇到的情况"><a href="#reactjs使用中遇到的情况" class="headerlink" title="reactjs使用中遇到的情况"></a>reactjs使用中遇到的情况</h3><p>简单的demo，请看官网;</p>
 <h3 id="1-什么时候用state-props"><a href="#1-什么时候用state-props" class="headerlink" title="1, 什么时候用state,props;"></a>1, 什么时候用state,props;</h3><p>简单的来说state，就是在有变化的，影响view的显示的，都需要用state,(不影响界面的，可以用this.attribute这种属性记录值)；props，主要在使用传递的值，或者一些不变的值；<br>举一两个自己写的组件:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyButton</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.displayName = <span class="string">'MyButton'</span>;</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.props.href) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">a</span>  <span class="attr">className</span>=<span class="string">&#123;</span>"<span class="attr">btn-red</span> "+<span class="attr">this.props.cls</span>&#125; &#123;<span class="attr">...this.props</span>&#125; <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.props.onClick()&#125;&gt;&#123;this.props.title&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">button</span> <span class="attr">className</span>=<span class="string">&#123;</span>"<span class="attr">btn-red</span> "+<span class="attr">this.props.cls</span>&#125; &#123;<span class="attr">...this.props</span>&#125; <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> this.props.onClick()&#125;&gt;&#123;this.props.title&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">MyButton.defaultProps = &#123;onClick:()=&gt;&#123;&#125;,cls:<span class="string">''</span>&#125;</div></pre></td></tr></table></figure>
-<p>这是一个自定义的button，其中基本没有用state(其实可以用，因为title是可以让变化的)，其中title有引用的地方传入,href也是，使用如下:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;MyButton title=<span class="string">"立即购买"</span> onClick=&#123;() =&gt; &#123; <span class="keyword">this</span>.makeOrder(); &#125;&#125;/&gt;</div><div class="line"><span class="xml"><span class="tag">&lt;<span class="name">MyButton</span> <span class="attr">title</span>=<span class="string">"帮助"</span> <span class="attr">href</span>=<span class="string">"/help"</span> <span class="attr">target</span>=<span class="string">"_blank"</span>/&gt;</span></span></div></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyButton</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.displayName = <span class="string">'MyButton'</span>;</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.props.href) &#123;</div><div class="line">            <span class="keyword">return</span> &lt;a  className=&#123;"btn-red "+this.props.cls&#125; &#123;...this.props&#125; onClick=&#123;() =&gt; this.props.onClick()&#125;&gt;&#123;this.props.title&#125;&lt;/a&gt;;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> &lt;button className=&#123;"btn-red "+this.props.cls&#125; &#123;...this.props&#125; onClick=&#123;() =&gt; this.props.onClick()&#125;&gt;&#123;this.props.title&#125;&lt;/button&gt;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">MyButton.defaultProps = &#123;onClick:()=&gt;&#123;&#125;,cls:<span class="string">''</span>&#125;</div></pre></td></tr></table></figure>
+<p>这是一个自定义的button，其中基本没有用state(其实可以用，因为title是可以让变化的)，其中title有引用的地方传入,href也是，使用如下:<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">&lt;MyButton title=<span class="string">"立即购买"</span> onClick=&#123;() =&gt; &#123; <span class="keyword">this</span>.makeOrder(); &#125;&#125;/&gt;</div><div class="line">&lt;MyButton title="帮助" href="/help" target="_blank"/&gt;</div></pre></td></tr></table></figure></p>
 <p>看一个使用state的：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyButtonNoBorder</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.displayName = <span class="string">'MyButtonNoBorder'</span>;</div><div class="line">        <span class="keyword">this</span>.state = &#123;enabled: <span class="literal">true</span>,title:props.title||<span class="string">''</span>&#125;</div><div class="line">    &#125;</div><div class="line">    setDisabled(disabled) &#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;enabled:!disabled&#125;);</div><div class="line">    &#125;</div><div class="line">    setTitle(title) &#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;title:title&#125;);</div><div class="line">    &#125;</div><div class="line">    componentWillUpdate(nextProps, nextState) &#123;</div><div class="line">        <span class="keyword">if</span>(nextProps.title != <span class="keyword">this</span>.state.title) &#123;</div><div class="line">            <span class="keyword">this</span>.setState(&#123;title: nextProps.title&#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">let</span> enabled = <span class="keyword">this</span>.state.enabled;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.props.href) &#123;</div><div class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">a</span>  <span class="attr">className</span>=<span class="string">&#123;</span>"<span class="attr">btn-noborder</span> "+(<span class="attr">enabled</span> ? '<span class="attr">enabled</span> ' <span class="attr">:</span> '<span class="attr">disabled</span> ')+<span class="attr">this.props.cls</span>&#125; &#123;<span class="attr">...this.props</span>&#125; <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;if(enabled) this.state.onClick()&#125;&#125; &gt;&#123;this.props.title&#125;<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span>;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">&#123;</span>"<span class="attr">btn-noborder</span> "+(<span class="attr">enabled</span> ? '<span class="attr">enabled</span> ' <span class="attr">:</span> '<span class="attr">disabled</span> ')+<span class="attr">this.props.cls</span>&#125; &#123;<span class="attr">...this.props</span>&#125; <span class="attr">onClick</span>=<span class="string">&#123;()</span> =&gt;</span> &#123;if(enabled) this.props.onClick()&#125;&#125; &gt;&#123;this.state.title&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">MyButtonNoBorder.defaultProps = &#123;onClick:()=&gt;&#123;&#125;,cls:<span class="string">''</span>&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyButtonNoBorder</span> <span class="keyword">extends</span> <span class="title">React</span>.<span class="title">Component</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.displayName = <span class="string">'MyButtonNoBorder'</span>;</div><div class="line">        <span class="keyword">this</span>.state = &#123;enabled: <span class="literal">true</span>,title:props.title||<span class="string">''</span>&#125;</div><div class="line">    &#125;</div><div class="line">    setDisabled(disabled) &#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;enabled:!disabled&#125;);</div><div class="line">    &#125;</div><div class="line">    setTitle(title) &#123;</div><div class="line">        <span class="keyword">this</span>.setState(&#123;title:title&#125;);</div><div class="line">    &#125;</div><div class="line">    componentWillUpdate(nextProps, nextState) &#123;</div><div class="line">        <span class="keyword">if</span>(nextProps.title != <span class="keyword">this</span>.state.title) &#123;</div><div class="line">            <span class="keyword">this</span>.setState(&#123;title: nextProps.title&#125;);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    render() &#123;</div><div class="line">        <span class="keyword">let</span> enabled = <span class="keyword">this</span>.state.enabled;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.props.href) &#123;</div><div class="line">            <span class="keyword">return</span> &lt;a  className=&#123;"btn-noborder "+(enabled ? 'enabled ' : 'disabled ')+this.props.cls&#125; &#123;...this.props&#125; onClick=&#123;() =&gt; &#123;if(enabled) this.state.onClick()&#125;&#125; &gt;&#123;this.props.title&#125;&lt;/a&gt;;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> &lt;div className=&#123;"btn-noborder "+(enabled ? 'enabled ' : 'disabled ')+this.props.cls&#125; &#123;...this.props&#125; onClick=&#123;() =&gt; &#123;if(enabled) this.props.onClick()&#125;&#125; &gt;&#123;this.state.title&#125;&lt;/div&gt;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">MyButtonNoBorder.defaultProps = &#123;onClick:()=&gt;&#123;&#125;,cls:<span class="string">''</span>&#125;</div></pre></td></tr></table></figure>
 <p>也是一个button，这个button其实独立出来，是因为样式不一样，比如有些不同，可以跟上面的整合，可以传不同的props来区分就ok; 我在使用中，分开，主要是考虑相互独立，干扰少点，设计变了，也好修改； 上面的代码，就对title，当做的state，这样调用它的ref，使用setTitle，就可以修改标题;由于title还是经常在使用的地方修改,比如使用的地方title在某一个操作后，改文字了，即新的props的title值不一样，所以需要实现componentWillUpdate，如果不一致，需要修改state；</p>
-<p>比如下面一个新的组件，发送验证码的组件:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyCodeButton</span> <span class="keyword">extends</span> <span class="title">MyButtonNoBorder</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.clearIntervalId = <span class="number">0</span>;</div><div class="line">        <span class="keyword">this</span>.countNumber = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    startCount() &#123;</div><div class="line">        <span class="keyword">this</span>.setDisabled(<span class="literal">true</span>);</div><div class="line">        <span class="keyword">this</span>.countNumber = <span class="number">60</span>;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.clearIntervalId) &#123;</div><div class="line">            clearInterval(<span class="keyword">this</span>.clearIntervalId);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.setTitle(<span class="string">'重新获取('</span>+<span class="keyword">this</span>.countNumber+<span class="string">')'</span>);</div><div class="line">        <span class="keyword">this</span>.clearIntervalId = setInterval(()=&gt;&#123;</div><div class="line">            <span class="keyword">this</span>.countNumber--;</div><div class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.countNumber &lt;= <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">this</span>.setDisabled(<span class="literal">false</span>);</div><div class="line">                <span class="keyword">this</span>.setTitle(<span class="keyword">this</span>.props.title);</div><div class="line">                clearInterval(<span class="keyword">this</span>.clearIntervalId);</div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">this</span>.setTitle(<span class="string">'重新获取('</span>+<span class="keyword">this</span>.countNumber+<span class="string">')'</span>)</div><div class="line">        &#125;,<span class="number">1000</span>);</div><div class="line">    &#125;</div><div class="line">    componentWillUnmount() &#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.clearIntervalId) &#123;</div><div class="line">            clearInterval(<span class="keyword">this</span>.clearIntervalId);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>使用:<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;MyCodeButton title=<span class="string">"获取验证码"</span> ref=&#123;(c) =&gt; <span class="keyword">this</span>.codeButton = c&#125; onClick=&#123;<span class="keyword">this</span>.onSendCode.bind(<span class="keyword">this</span>)&#125; /&gt;</div></pre></td></tr></table></figure></p>
+<p>比如下面一个新的组件，发送验证码的组件:<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line"><span class="keyword">export</span> <span class="class"><span class="keyword">class</span> <span class="title">MyCodeButton</span> <span class="keyword">extends</span> <span class="title">MyButtonNoBorder</span> </span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(props) &#123;</div><div class="line">        <span class="keyword">super</span>(props);</div><div class="line">        <span class="keyword">this</span>.clearIntervalId = <span class="number">0</span>;</div><div class="line">        <span class="keyword">this</span>.countNumber = <span class="number">0</span>;</div><div class="line">    &#125;</div><div class="line">    startCount() &#123;</div><div class="line">        <span class="keyword">this</span>.setDisabled(<span class="literal">true</span>);</div><div class="line">        <span class="keyword">this</span>.countNumber = <span class="number">60</span>;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.clearIntervalId) &#123;</div><div class="line">            clearInterval(<span class="keyword">this</span>.clearIntervalId);</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">this</span>.setTitle(<span class="string">'重新获取('</span>+<span class="keyword">this</span>.countNumber+<span class="string">')'</span>);</div><div class="line">        <span class="keyword">this</span>.clearIntervalId = setInterval(()=&gt;&#123;</div><div class="line">            <span class="keyword">this</span>.countNumber--;</div><div class="line">            <span class="keyword">if</span>(<span class="keyword">this</span>.countNumber &lt;= <span class="number">0</span>) &#123;</div><div class="line">                <span class="keyword">this</span>.setDisabled(<span class="literal">false</span>);</div><div class="line">                <span class="keyword">this</span>.setTitle(<span class="keyword">this</span>.props.title);</div><div class="line">                clearInterval(<span class="keyword">this</span>.clearIntervalId);</div><div class="line">                <span class="keyword">return</span>;</div><div class="line">            &#125;</div><div class="line">            <span class="keyword">this</span>.setTitle(<span class="string">'重新获取('</span>+<span class="keyword">this</span>.countNumber+<span class="string">')'</span>)</div><div class="line">        &#125;,<span class="number">1000</span>);</div><div class="line">    &#125;</div><div class="line">    componentWillUnmount() &#123;</div><div class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.clearIntervalId) &#123;</div><div class="line">            clearInterval(<span class="keyword">this</span>.clearIntervalId);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>使用:<br><figure class="highlight javascript"><table><tr><td class="code"><pre><div class="line">&lt;MyCodeButton title=<span class="string">"获取验证码"</span> ref=&#123;(c) =&gt; <span class="keyword">this</span>.codeButton = c&#125; onClick=&#123;<span class="keyword">this</span>.onSendCode.bind(<span class="keyword">this</span>)&#125; /&gt;</div></pre></td></tr></table></figure></p>
 
                 <hr>
                 
@@ -233,8 +233,33 @@
 
                 <!-- Featured Tags -->
                 
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#js"
+                           title="js">js</a>
+                        
+                        <a class="tag" href="/tags/#reactjs"
+                           title="reactjs">reactjs</a>
+                        
+                    </div>
+                </section>
+                
 
                 <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="http://bumaociyuan.github.io/">不毛次元</a></li>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -258,18 +283,45 @@
                 
                 
                 
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
 
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Helen 2017
+                    Copyright &copy; 我的博客 2017
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
@@ -306,7 +358,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
+        async("http://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -338,13 +390,13 @@
   e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
   })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','undefined','2.0.0');
+  _st('install','null','2.0.0');
 </script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="undefined">
+<img class="wechat-title-img" src="null">
 </body>
 
 </html>

@@ -6,23 +6,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="android,ios,javascript,html,css">
-    <meta name="keyword" content="undefined">
+    <meta name="description" content="邝利军在 Github 上的个人博客">
+    <meta name="keyword" content="Helen 邝利军 小邝 Harley javascript css">
     <meta name="theme-color" content="#600090">
     <meta name="msapplication-navbutton-color" content="#600090">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="#600090">
     <link rel="shortcut icon" href="https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png">
-    <link rel="alternate" type="application/atom+xml" title="Helen" href="/atom.xml">
+    <link rel="alternate" type="application/atom+xml" title="我的博客" href="/atom.xml">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
     <link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.3/css/font-awesome.css">
     <title>
         
-        js 处理 excel｜undefined
+        js 处理 excel｜Helen&#39;s blog
         
     </title>
 
-    <link rel="canonical" href="https://kuanglijun312.github.io/2016/09/02/js-excel/">
+    <link rel="canonical" href="http://kuanglijun312.github.io/2016/09/02/js-excel/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -37,7 +37,7 @@
 <style>
 
     header.intro-header {
-        background-image: url('undefined')
+        background-image: url('/images/logo.png')
     }
 </style>
 <!-- hack iOS CSS :active style -->
@@ -56,7 +56,7 @@
             </button>
             <a class="navbar-brand animated pulse" href="/">
                 <span class="brand-logo">
-                    Helen
+                    我的博客
                 </span>
                 's Blog
             </a>
@@ -148,7 +148,7 @@
                     <h1>js 处理 excel</h1>
                     
                     <span class="meta">
-                         作者 Lijun Kuang
+                         作者 Kuang Lijun
                         <span>
                           日期 2016-09-02
                          </span>
@@ -185,14 +185,14 @@
         <div class="row">
             <!-- Post Container -->
             <div class="col-lg-8 col-lg-offset-1 col-sm-9 post-container">
-                <h3 id="js库"><a href="#js库" class="headerlink" title="js库"></a>js库</h3><p>很多时候需要处理excel,比如用php去读取使用phpexcel,很占内存，也慢，读取大的文件，就需要设置:<br><figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@set_time_limit(<span class="number">0</span>);</div><div class="line">@ini_set(<span class="string">'memory_limit'</span>, <span class="string">'1024M'</span>);</div></pre></td></tr></table></figure></p>
+                <h3 id="js库"><a href="#js库" class="headerlink" title="js库"></a>js库</h3><p>很多时候需要处理excel,比如用php去读取使用phpexcel,很占内存，也慢，读取大的文件，就需要设置:<br><figure class="highlight php"><table><tr><td class="code"><pre><div class="line">@set_time_limit(<span class="number">0</span>);</div><div class="line">@ini_set(<span class="string">'memory_limit'</span>, <span class="string">'1024M'</span>);</div></pre></td></tr></table></figure></p>
 <p>有时候，使用js脚本更轻松，这就是nodejs很大的贡献；</p>
 <p>在这里推荐使用:<a href="https://github.com/SheetJS/js-xlsx" target="_blank" rel="external">https://github.com/SheetJS/js-xlsx</a>;<br>具体使用可以参考：<a href="https://scarletsky.github.io/2016/01/30/nodejs-process-excel/" target="_blank" rel="external">在 Node.js 中利用 js-xlsx 处理 Excel 文件</a></p>
-<h3 id="解析excel"><a href="#解析excel" class="headerlink" title="解析excel;"></a>解析excel;</h3><p>代码说话吧，下面代码主要是生成插入的sql文件；<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> XLSX = <span class="built_in">require</span>(<span class="string">'xlsx'</span>);</div><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">const</span> workbook = XLSX.readFile(<span class="string">'t.xlsx'</span>, &#123;&#125;);</div><div class="line"><span class="built_in">console</span>.log(workbook.SheetNames)</div><div class="line"><span class="keyword">var</span> arr = [];</div><div class="line"><span class="keyword">var</span> sqlArr = [];</div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> index = <span class="number">0</span>;</div><div class="line">workbook.SheetNames.forEach((sheet,i) =&gt; &#123;</div><div class="line">    i = (i+<span class="number">1</span>)%<span class="number">3</span></div><div class="line">    <span class="keyword">var</span> data = XLSX.utils.make_json(workbook.Sheets[sheet],&#123;header:<span class="number">1</span>&#125;);</div><div class="line">    <span class="built_in">console</span>.log(workbook.Sheets[sheet][<span class="string">'!ref'</span>]);</div><div class="line">    <span class="keyword">if</span>(i == <span class="number">1</span>) &#123;</div><div class="line">        <span class="built_in">console</span>.log(workbook.Sheets[sheet])</div><div class="line">        <span class="built_in">console</span>.log(data,data.length);</div><div class="line">    &#125;</div><div class="line">    data.forEach((d,j) =&gt; &#123;</div><div class="line">        <span class="keyword">var</span> v = d[<span class="number">0</span>].replace(<span class="regexp">/[\r\n]/g</span>,<span class="string">""</span>);</div><div class="line">        arr.push(<span class="string">'"'</span>+[v, i, <span class="string">'2016-09-01 12:50:00'</span>].join(<span class="string">'","'</span>)+<span class="string">'"'</span>);</div><div class="line">        <span class="keyword">if</span>(obj[v] || v==<span class="string">''</span>) &#123;</div><div class="line">            <span class="built_in">console</span>.log(v);</div><div class="line">        &#125;</div><div class="line">        obj[v] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span>(arr.length &gt;= <span class="number">10000</span>) &#123;</div><div class="line">            sqlArr.push(<span class="string">'insert into mpc_chengyang_code (code,code_type,code_time_create) values ('</span>+arr.join(<span class="string">'),('</span>)+<span class="string">');'</span>)</div><div class="line">            arr.length = <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line">sqlArr.push(<span class="string">'insert into mpc_chengyang_code (code,code_type,code_time_create) values ('</span>+arr.join(<span class="string">'),('</span>)+<span class="string">');'</span>)</div><div class="line"></div><div class="line">fs.writeFile(<span class="string">'code.sql'</span>, sqlArr.join(<span class="string">''</span>), <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">    <span class="built_in">console</span>.log(err);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Export Account Success!"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>注意： nodejs4点几版本，不支持import,也不能用let,有点无奈~~这里提醒下 make_json 的第二个参数，看源代码，可以不传，可以传1,或者’A’;<br>传1的话是数组形式:<br><figure class="highlight json"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[ [ 'AAA', 'BBB' ],</div><div class="line">  [ 'AAA2', 'BBB2' ],</div><div class="line">  [ 'AAA3', 'BBB3' ],</div><div class="line">  [ , 'BBB4' ] ]</div></pre></td></tr></table></figure></p>
-<p>传’A’的是json：且从第一行开始算:<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[ &#123; A: 'AAA', B: 'BBB' &#125;,</div><div class="line">  &#123; A: 'AAA2', B: 'BBB2' &#125;,</div><div class="line">  &#123; A: 'AAA3', B: 'BBB3' &#125;,</div><div class="line">  &#123; B: 'BBB4' &#125; ]</div></pre></td></tr></table></figure></p>
+<h3 id="解析excel"><a href="#解析excel" class="headerlink" title="解析excel;"></a>解析excel;</h3><p>代码说话吧，下面代码主要是生成插入的sql文件；<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> XLSX = <span class="built_in">require</span>(<span class="string">'xlsx'</span>);</div><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">const</span> workbook = XLSX.readFile(<span class="string">'t.xlsx'</span>, &#123;&#125;);</div><div class="line"><span class="built_in">console</span>.log(workbook.SheetNames)</div><div class="line"><span class="keyword">var</span> arr = [];</div><div class="line"><span class="keyword">var</span> sqlArr = [];</div><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> index = <span class="number">0</span>;</div><div class="line">workbook.SheetNames.forEach((sheet,i) =&gt; &#123;</div><div class="line">    i = (i+<span class="number">1</span>)%<span class="number">3</span></div><div class="line">    <span class="keyword">var</span> data = XLSX.utils.make_json(workbook.Sheets[sheet],&#123;header:<span class="number">1</span>&#125;);</div><div class="line">    <span class="built_in">console</span>.log(workbook.Sheets[sheet][<span class="string">'!ref'</span>]);</div><div class="line">    <span class="keyword">if</span>(i == <span class="number">1</span>) &#123;</div><div class="line">        <span class="built_in">console</span>.log(workbook.Sheets[sheet])</div><div class="line">        <span class="built_in">console</span>.log(data,data.length);</div><div class="line">    &#125;</div><div class="line">    data.forEach((d,j) =&gt; &#123;</div><div class="line">        <span class="keyword">var</span> v = d[<span class="number">0</span>].replace(<span class="regexp">/[\r\n]/g</span>,<span class="string">""</span>);</div><div class="line">        arr.push(<span class="string">'"'</span>+[v, i, <span class="string">'2016-09-01 12:50:00'</span>].join(<span class="string">'","'</span>)+<span class="string">'"'</span>);</div><div class="line">        <span class="keyword">if</span>(obj[v] || v==<span class="string">''</span>) &#123;</div><div class="line">            <span class="built_in">console</span>.log(v);</div><div class="line">        &#125;</div><div class="line">        obj[v] = <span class="number">1</span>;</div><div class="line">        <span class="keyword">if</span>(arr.length &gt;= <span class="number">10000</span>) &#123;</div><div class="line">            sqlArr.push(<span class="string">'insert into mpc_chengyang_code (code,code_type,code_time_create) values ('</span>+arr.join(<span class="string">'),('</span>)+<span class="string">');'</span>)</div><div class="line">            arr.length = <span class="number">0</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">&#125;);</div><div class="line"></div><div class="line">sqlArr.push(<span class="string">'insert into mpc_chengyang_code (code,code_type,code_time_create) values ('</span>+arr.join(<span class="string">'),('</span>)+<span class="string">');'</span>)</div><div class="line"></div><div class="line">fs.writeFile(<span class="string">'code.sql'</span>, sqlArr.join(<span class="string">''</span>), <span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</div><div class="line">    <span class="keyword">if</span> (err) <span class="keyword">throw</span> err;</div><div class="line">    <span class="built_in">console</span>.log(err);</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"Export Account Success!"</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>注意： nodejs4点几版本，不支持import,也不能用let,有点无奈~~这里提醒下 make_json 的第二个参数，看源代码，可以不传，可以传1,或者’A’;<br>传1的话是数组形式:<br><figure class="highlight json"><table><tr><td class="code"><pre><div class="line">[ [ 'AAA', 'BBB' ],</div><div class="line">  [ 'AAA2', 'BBB2' ],</div><div class="line">  [ 'AAA3', 'BBB3' ],</div><div class="line">  [ , 'BBB4' ] ]</div></pre></td></tr></table></figure></p>
+<p>传’A’的是json：且从第一行开始算:<br><figure class="highlight"><table><tr><td class="code"><pre><div class="line">[ &#123; A: 'AAA', B: 'BBB' &#125;,</div><div class="line">  &#123; A: 'AAA2', B: 'BBB2' &#125;,</div><div class="line">  &#123; A: 'AAA3', B: 'BBB3' &#125;,</div><div class="line">  &#123; B: 'BBB4' &#125; ]</div></pre></td></tr></table></figure></p>
 <p>默认是从第二列开始算，且以第一列为key;</p>
-<h3 id="写入excel"><a href="#写入excel" class="headerlink" title="写入excel"></a>写入excel</h3><p>看代码:<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> XLSX = <span class="built_in">require</span>(<span class="string">'xlsx'</span>);</div><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">exportXlsxFile</span>(<span class="params">headers, data, sheetName, fileName</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> sheetName = sheetName || <span class="string">'mySheet'</span>;</div><div class="line">    <span class="keyword">var</span> fileName = fileName || <span class="string">'output.xlsx'</span>;</div><div class="line">    <span class="keyword">var</span> output = &#123;&#125;,headerKeys = [];</div><div class="line">    headers.forEach((d,i) =&gt; &#123;</div><div class="line">        <span class="keyword">var</span> pos = <span class="built_in">String</span>.fromCharCode(<span class="number">65</span>+i) + <span class="number">1</span>;</div><div class="line">        output[pos] = &#123;<span class="string">'v'</span>:d[<span class="number">1</span>]&#125;;</div><div class="line">        headerKeys.push(d[<span class="number">0</span>]);</div><div class="line">    &#125;);</div><div class="line">    data.forEach((d,i) =&gt; &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> d) &#123;</div><div class="line">            <span class="keyword">var</span> pos = headerKeys.indexOf(k);</div><div class="line">            <span class="keyword">if</span>(~pos) &#123;</div><div class="line">                pos = <span class="built_in">String</span>.fromCharCode(<span class="number">65</span>+pos) + (i+<span class="number">2</span>);</div><div class="line">                output[pos] = &#123;<span class="string">'v'</span>:d[k],<span class="string">'t'</span>:<span class="string">'s'</span>&#125;;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    output[<span class="string">'!ref'</span>] = <span class="string">'A1:'</span>+<span class="built_in">String</span>.fromCharCode(<span class="number">65</span>+headers.length)+(data.length+<span class="number">1</span>);</div><div class="line">    <span class="keyword">var</span> Sheets = &#123;&#125;;</div><div class="line">    Sheets[sheetName] = output;</div><div class="line">    <span class="keyword">var</span> wb = &#123;</div><div class="line">        SheetNames: [sheetName],</div><div class="line">        Sheets:Sheets</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    XLSX.writeFile(wb, fileName);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> headers = [[<span class="string">'id'</span>,<span class="string">'ID'</span>],[<span class="string">'name'</span>,<span class="string">'姓名'</span>], [<span class="string">'age'</span>,<span class="string">'年龄'</span>], [<span class="string">'country'</span>,<span class="string">'国家'</span>], [<span class="string">'remark'</span>,<span class="string">'备注'</span>]]</div><div class="line"><span class="keyword">var</span> data = [ &#123; id: <span class="string">'1'</span>,</div><div class="line">                name: <span class="string">'test1'</span>,</div><div class="line">                age: <span class="string">'30'</span>,</div><div class="line">                country: <span class="string">'China'</span>,</div><div class="line">                remark: <span class="string">'hello'</span> &#125;,</div><div class="line">              &#123; id: <span class="string">'2'</span>,</div><div class="line">                name: <span class="string">'test2'</span>,</div><div class="line">                age: <span class="string">'20'</span>,</div><div class="line">                country: <span class="string">'America'</span>,</div><div class="line">                remark: <span class="string">'world'</span> &#125;,</div><div class="line">              &#123; id: <span class="string">'3'</span>,</div><div class="line">                name: <span class="string">'test3'</span>,</div><div class="line">                age: <span class="string">'18'</span>,</div><div class="line">                country: <span class="string">'Unkonw'</span>,</div><div class="line">                remark: <span class="string">'???'</span> &#125; ];</div><div class="line"><span class="keyword">var</span> sheetName = <span class="string">'mySheet'</span>;</div><div class="line"><span class="keyword">var</span> fileName = <span class="string">''</span>;</div><div class="line"></div><div class="line">exportXlsxFile(headers, data, <span class="string">'哈哈哈哈'</span>, <span class="string">'我的excel.xlsx'</span>);</div></pre></td></tr></table></figure></p>
+<h3 id="写入excel"><a href="#写入excel" class="headerlink" title="写入excel"></a>写入excel</h3><p>看代码:<br><figure class="highlight js"><table><tr><td class="code"><pre><div class="line"><span class="keyword">const</span> XLSX = <span class="built_in">require</span>(<span class="string">'xlsx'</span>);</div><div class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">'fs'</span>);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">exportXlsxFile</span>(<span class="params">headers, data, sheetName, fileName</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> sheetName = sheetName || <span class="string">'mySheet'</span>;</div><div class="line">    <span class="keyword">var</span> fileName = fileName || <span class="string">'output.xlsx'</span>;</div><div class="line">    <span class="keyword">var</span> output = &#123;&#125;,headerKeys = [];</div><div class="line">    headers.forEach((d,i) =&gt; &#123;</div><div class="line">        <span class="keyword">var</span> pos = <span class="built_in">String</span>.fromCharCode(<span class="number">65</span>+i) + <span class="number">1</span>;</div><div class="line">        output[pos] = &#123;<span class="string">'v'</span>:d[<span class="number">1</span>]&#125;;</div><div class="line">        headerKeys.push(d[<span class="number">0</span>]);</div><div class="line">    &#125;);</div><div class="line">    data.forEach((d,i) =&gt; &#123;</div><div class="line">        <span class="keyword">for</span>(<span class="keyword">var</span> k <span class="keyword">in</span> d) &#123;</div><div class="line">            <span class="keyword">var</span> pos = headerKeys.indexOf(k);</div><div class="line">            <span class="keyword">if</span>(~pos) &#123;</div><div class="line">                pos = <span class="built_in">String</span>.fromCharCode(<span class="number">65</span>+pos) + (i+<span class="number">2</span>);</div><div class="line">                output[pos] = &#123;<span class="string">'v'</span>:d[k],<span class="string">'t'</span>:<span class="string">'s'</span>&#125;;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line"></div><div class="line">    output[<span class="string">'!ref'</span>] = <span class="string">'A1:'</span>+<span class="built_in">String</span>.fromCharCode(<span class="number">65</span>+headers.length)+(data.length+<span class="number">1</span>);</div><div class="line">    <span class="keyword">var</span> Sheets = &#123;&#125;;</div><div class="line">    Sheets[sheetName] = output;</div><div class="line">    <span class="keyword">var</span> wb = &#123;</div><div class="line">        SheetNames: [sheetName],</div><div class="line">        Sheets:Sheets</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    XLSX.writeFile(wb, fileName);</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> headers = [[<span class="string">'id'</span>,<span class="string">'ID'</span>],[<span class="string">'name'</span>,<span class="string">'姓名'</span>], [<span class="string">'age'</span>,<span class="string">'年龄'</span>], [<span class="string">'country'</span>,<span class="string">'国家'</span>], [<span class="string">'remark'</span>,<span class="string">'备注'</span>]]</div><div class="line"><span class="keyword">var</span> data = [ &#123; id: <span class="string">'1'</span>,</div><div class="line">                name: <span class="string">'test1'</span>,</div><div class="line">                age: <span class="string">'30'</span>,</div><div class="line">                country: <span class="string">'China'</span>,</div><div class="line">                remark: <span class="string">'hello'</span> &#125;,</div><div class="line">              &#123; id: <span class="string">'2'</span>,</div><div class="line">                name: <span class="string">'test2'</span>,</div><div class="line">                age: <span class="string">'20'</span>,</div><div class="line">                country: <span class="string">'America'</span>,</div><div class="line">                remark: <span class="string">'world'</span> &#125;,</div><div class="line">              &#123; id: <span class="string">'3'</span>,</div><div class="line">                name: <span class="string">'test3'</span>,</div><div class="line">                age: <span class="string">'18'</span>,</div><div class="line">                country: <span class="string">'Unkonw'</span>,</div><div class="line">                remark: <span class="string">'???'</span> &#125; ];</div><div class="line"><span class="keyword">var</span> sheetName = <span class="string">'mySheet'</span>;</div><div class="line"><span class="keyword">var</span> fileName = <span class="string">''</span>;</div><div class="line"></div><div class="line">exportXlsxFile(headers, data, <span class="string">'哈哈哈哈'</span>, <span class="string">'我的excel.xlsx'</span>);</div></pre></td></tr></table></figure></p>
 <p>注意点: 主要是要拼成workbook的json格式; 其中’!ref’，很重要，为写入多少!</p>
 
                 <hr>
@@ -231,8 +231,39 @@
 
                 <!-- Featured Tags -->
                 
+                <section>
+                    <!-- no hr -->
+                    <h5 class="text-center">
+                        <a href="/tags/">FEATURED TAGS</a>
+                    </h5>
+                    <div class="tags">
+                        
+                        <a class="tag" href="/tags/#js"
+                           title="js">js</a>
+                        
+                        <a class="tag" href="/tags/#javascipt"
+                           title="javascipt">javascipt</a>
+                        
+                        <a class="tag" href="/tags/#excel"
+                           title="excel">excel</a>
+                        
+                        <a class="tag" href="/tags/#xlsx"
+                           title="xlsx">xlsx</a>
+                        
+                    </div>
+                </section>
+                
 
                 <!-- Friends Blog -->
+                
+                <div style="margin-top: 20px;">
+                    <h5 class="text-center">FRIENDS</h5>
+                    <ul class="list-inline text-center">
+                        
+                        <li><a href="http://bumaociyuan.github.io/">不毛次元</a></li>
+                        
+                    </ul>
+                </div>
                 
             </div>
         </div>
@@ -256,18 +287,45 @@
                 
                 
                 
+                    <li>
+                        <a target="_blank" href="https://www.zhihu.com/people/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa  fa-stack-1x fa-inverse">知</i>
+                            </span>
+                        </a>
+                    </li>
+                
 
+                
+                    <li>
+                        <a target="_blank" href="http://weibo.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
+                
+                    <li>
+                        <a target="_blank"  href="https://github.com/kuanglijun312">
+                            <span class="fa-stack fa-lg">
+                                <i class="fa fa-circle fa-stack-2x"></i>
+                                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                            </span>
+                        </a>
+                    </li>
                 
 
                 
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Helen 2017
+                    Copyright &copy; 我的博客 2017
                     <br>
                     <span id="busuanzi_container_site_pv" style="font-size: 12px;">PV: <span id="busuanzi_value_site_pv"></span> Times</span>
                     <br>
@@ -304,7 +362,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("https://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
+        async("http://kuanglijun312.github.io/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -336,13 +394,13 @@
   e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
   })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
 
-  _st('install','undefined','2.0.0');
+  _st('install','null','2.0.0');
 </script>
 
 <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
 <!--wechat title img-->
-<img class="wechat-title-img" src="undefined">
+<img class="wechat-title-img" src="null">
 </body>
 
 </html>
