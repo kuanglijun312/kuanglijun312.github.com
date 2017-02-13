@@ -60,7 +60,7 @@
     <content type="html"><![CDATA[<p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
 <h1 id="迁移的问题-–-2015-04-05"><a href="#迁移的问题-–-2015-04-05" class="headerlink" title="迁移的问题 – 2015-04-05"></a>迁移的问题 – 2015-04-05</h1><p>全局安装hexo<br><figure class="highlight plain"><figcaption><span>install hexo -g ```</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">本地文件夹安装hexo </div><div class="line">``` npm install hexo --no-optional</div></pre></td></tr></table></figure></p>
 <p>如果出现以下问题，请加–no-optional;</p>
-<p>出现以下问题：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [<span class="built_in">Error</span>: Cannot find <span class="built_in">module</span> <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [<span class="built_in">Error</span>: Cannot find <span class="built_in">module</span> <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [<span class="built_in">Error</span>: Cannot find <span class="built_in">module</span> <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure></p>
+<p>出现以下问题：<br><figure class="highlight arduino"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&#123; [Error: Cannot <span class="built_in">find</span> <span class="keyword">module</span> <span class="string">'./build/Release/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot <span class="built_in">find</span> <span class="keyword">module</span> <span class="string">'./build/default/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div><div class="line">&#123; [Error: Cannot <span class="built_in">find</span> <span class="keyword">module</span> <span class="string">'./build/Debug/DTraceProviderBindings'</span>] code: <span class="string">'MODULE_NOT_FOUND'</span> &#125;</div></pre></td></tr></table></figure></p>
 <p>另外需要本地<figure class="highlight plain"><figcaption><span>install```;</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">检查_config.xml; 其中的theme，检查themes文件夹下的对应的theme是否存在;</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">``` bash</div><div class="line">$ hexo n</div><div class="line">$ hexo g</div><div class="line">$ hexo s</div><div class="line">$ hexo d</div></pre></td></tr></table></figure></p>
 <a id="more"></a>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
@@ -78,7 +78,7 @@
       &lt;p&gt;Welcome to &lt;a href=&quot;http://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;http://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;http://hexo.io/docs/troubleshooting.html&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
 &lt;h1 id=&quot;迁移的问题-–-2015-04-05&quot;&gt;&lt;a href=&quot;#迁移的问题-–-2015-04-05&quot; class=&quot;headerlink&quot; title=&quot;迁移的问题 – 2015-04-05&quot;&gt;&lt;/a&gt;迁移的问题 – 2015-04-05&lt;/h1&gt;&lt;p&gt;全局安装hexo&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;install hexo -g ```&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;本地文件夹安装hexo &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;``` npm install hexo --no-optional&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;如果出现以下问题，请加–no-optional;&lt;/p&gt;
-&lt;p&gt;出现以下问题：&lt;br&gt;&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [&lt;span class=&quot;built_in&quot;&gt;Error&lt;/span&gt;: Cannot find &lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;./build/Release/DTraceProviderBindings&#39;&lt;/span&gt;] code: &lt;span class=&quot;string&quot;&gt;&#39;MODULE_NOT_FOUND&#39;&lt;/span&gt; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [&lt;span class=&quot;built_in&quot;&gt;Error&lt;/span&gt;: Cannot find &lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;./build/default/DTraceProviderBindings&#39;&lt;/span&gt;] code: &lt;span class=&quot;string&quot;&gt;&#39;MODULE_NOT_FOUND&#39;&lt;/span&gt; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [&lt;span class=&quot;built_in&quot;&gt;Error&lt;/span&gt;: Cannot find &lt;span class=&quot;built_in&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;./build/Debug/DTraceProviderBindings&#39;&lt;/span&gt;] code: &lt;span class=&quot;string&quot;&gt;&#39;MODULE_NOT_FOUND&#39;&lt;/span&gt; &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;出现以下问题：&lt;br&gt;&lt;figure class=&quot;highlight arduino&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot &lt;span class=&quot;built_in&quot;&gt;find&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;./build/Release/DTraceProviderBindings&#39;&lt;/span&gt;] code: &lt;span class=&quot;string&quot;&gt;&#39;MODULE_NOT_FOUND&#39;&lt;/span&gt; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot &lt;span class=&quot;built_in&quot;&gt;find&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;./build/default/DTraceProviderBindings&#39;&lt;/span&gt;] code: &lt;span class=&quot;string&quot;&gt;&#39;MODULE_NOT_FOUND&#39;&lt;/span&gt; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#123; [Error: Cannot &lt;span class=&quot;built_in&quot;&gt;find&lt;/span&gt; &lt;span class=&quot;keyword&quot;&gt;module&lt;/span&gt; &lt;span class=&quot;string&quot;&gt;&#39;./build/Debug/DTraceProviderBindings&#39;&lt;/span&gt;] code: &lt;span class=&quot;string&quot;&gt;&#39;MODULE_NOT_FOUND&#39;&lt;/span&gt; &amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
 &lt;p&gt;另外需要本地&lt;figure class=&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;install```;&lt;/span&gt;&lt;/figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;检查_config.xml; 其中的theme，检查themes文件夹下的对应的theme是否存在;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;``` bash&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo n&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo g&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo s&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ hexo d&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
     
     </summary>
@@ -229,54 +229,6 @@
   </entry>
   
   <entry>
-    <title>es6一些常用的</title>
-    <link href="https://kuanglijun312.github.io/2016/06/20/es6-some-important/"/>
-    <id>https://kuanglijun312.github.io/2016/06/20/es6-some-important/</id>
-    <published>2016-06-20T07:55:29.000Z</published>
-    <updated>2016-09-02T03:12:56.185Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="es6常用的一些"><a href="#es6常用的一些" class="headerlink" title="es6常用的一些"></a>es6常用的一些</h3><ol>
-<li>消除var； 尽可能的使用let;</li>
-<li>使用箭头函数，如 () -&gt; {}; 箭头函数还在当前域里,注意arguments,this；</li>
-<li>使用 …; 例如: let {name = ‘’,…ohterInfo} = {name=”kuanglijun”,avatar:’<a href="http://kuanglijun312.github.io/img/logo.png&#39;,nickname=&quot;harley&quot;}">http://kuanglijun312.github.io/img/logo.png&#39;,nickname=&quot;harley&quot;}</a>;</li>
-<li>函数使用默认参数，例如showLoading = (msg = ‘正在加载中…’) { … other code; }</li>
-<li><p>普通对象赋值，比如: </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>,b =<span class="number">2</span>; </div><div class="line"><span class="keyword">let</span> obj = &#123;a,b&#125;;  <span class="comment">//result is obj = &#123;a: 1,b:2 &#125;;</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>object.assign , array.map等等常用的方法</p>
-</li>
-<li>类的实现, 已有类的概念, contructor构造函数</li>
-<li>Promise, function* ,yield的使用<a id="more"></a>
-</li>
-</ol>
-<p>tips:<br>Object.assign，一些浏览器含有，一些没有，需要引用 ‘babel-polyfill’; 如果没有，请用下面的代码处理<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">assign: <span class="function"><span class="keyword">function</span> (<span class="params">target</span>) </span>&#123;</div><div class="line"><span class="meta">        'use strict'</span>;</div><div class="line">        <span class="keyword">if</span> (target === <span class="literal">undefined</span> || target === <span class="literal">null</span>) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Cannot convert undefined or null to object'</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> output = <span class="built_in">Object</span>(target);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> index = <span class="number">1</span>; index &lt; <span class="built_in">arguments</span>.length; index++) &#123;</div><div class="line">            <span class="keyword">var</span> source = <span class="built_in">arguments</span>[index];</div><div class="line">            <span class="keyword">if</span> (source !== <span class="literal">undefined</span> &amp;&amp; source !== <span class="literal">null</span>) &#123;</div><div class="line">              <span class="keyword">for</span> (<span class="keyword">var</span> nextKey <span class="keyword">in</span> source) &#123;</div><div class="line">                <span class="keyword">if</span> (source.hasOwnProperty(nextKey)) &#123;</div><div class="line">                  output[nextKey] = source[nextKey];</div><div class="line">                &#125;</div><div class="line">              &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> output;</div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;es6常用的一些&quot;&gt;&lt;a href=&quot;#es6常用的一些&quot; class=&quot;headerlink&quot; title=&quot;es6常用的一些&quot;&gt;&lt;/a&gt;es6常用的一些&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;消除var； 尽可能的使用let;&lt;/li&gt;
-&lt;li&gt;使用箭头函数，如 () -&amp;gt; {}; 箭头函数还在当前域里,注意arguments,this；&lt;/li&gt;
-&lt;li&gt;使用 …; 例如: let {name = ‘’,…ohterInfo} = {name=”kuanglijun”,avatar:’&lt;a href=&quot;http://kuanglijun312.github.io/img/logo.png&amp;#39;,nickname=&amp;quot;harley&amp;quot;}&quot;&gt;http://kuanglijun312.github.io/img/logo.png&amp;#39;,nickname=&amp;quot;harley&amp;quot;}&lt;/a&gt;;&lt;/li&gt;
-&lt;li&gt;函数使用默认参数，例如showLoading = (msg = ‘正在加载中…’) { … other code; }&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;普通对象赋值，比如: &lt;/p&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; a = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,b =&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; obj = &amp;#123;a,b&amp;#125;;  &lt;span class=&quot;comment&quot;&gt;//result is obj = &amp;#123;a: 1,b:2 &amp;#125;;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
-&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;object.assign , array.map等等常用的方法&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;类的实现, 已有类的概念, contructor构造函数&lt;/li&gt;
-&lt;li&gt;Promise, function* ,yield的使用
-    
-    </summary>
-    
-    
-      <category term="js" scheme="https://kuanglijun312.github.io/tags/js/"/>
-    
-      <category term="es6" scheme="https://kuanglijun312.github.io/tags/es6/"/>
-    
-  </entry>
-  
-  <entry>
     <title>我的一些常用的js方法，备忘</title>
     <link href="https://kuanglijun312.github.io/2016/06/20/my-js-use-func/"/>
     <id>https://kuanglijun312.github.io/2016/06/20/my-js-use-func/</id>
@@ -326,9 +278,57 @@
     </summary>
     
     
+      <category term="es6" scheme="https://kuanglijun312.github.io/tags/es6/"/>
+    
       <category term="js" scheme="https://kuanglijun312.github.io/tags/js/"/>
     
+  </entry>
+  
+  <entry>
+    <title>es6一些常用的</title>
+    <link href="https://kuanglijun312.github.io/2016/06/20/es6-some-important/"/>
+    <id>https://kuanglijun312.github.io/2016/06/20/es6-some-important/</id>
+    <published>2016-06-20T07:55:29.000Z</published>
+    <updated>2016-09-02T03:12:56.185Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="es6常用的一些"><a href="#es6常用的一些" class="headerlink" title="es6常用的一些"></a>es6常用的一些</h3><ol>
+<li>消除var； 尽可能的使用let;</li>
+<li>使用箭头函数，如 () -&gt; {}; 箭头函数还在当前域里,注意arguments,this；</li>
+<li>使用 …; 例如: let {name = ‘’,…ohterInfo} = {name=”kuanglijun”,avatar:’<a href="http://kuanglijun312.github.io/img/logo.png&#39;,nickname=&quot;harley&quot;}">http://kuanglijun312.github.io/img/logo.png&#39;,nickname=&quot;harley&quot;}</a>;</li>
+<li>函数使用默认参数，例如showLoading = (msg = ‘正在加载中…’) { … other code; }</li>
+<li><p>普通对象赋值，比如: </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> a = <span class="number">1</span>,b =<span class="number">2</span>; </div><div class="line"><span class="keyword">let</span> obj = &#123;a,b&#125;;  <span class="comment">//result is obj = &#123;a: 1,b:2 &#125;;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>object.assign , array.map等等常用的方法</p>
+</li>
+<li>类的实现, 已有类的概念, contructor构造函数</li>
+<li>Promise, function* ,yield的使用<a id="more"></a>
+</li>
+</ol>
+<p>tips:<br>Object.assign，一些浏览器含有，一些没有，需要引用 ‘babel-polyfill’; 如果没有，请用下面的代码处理<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">assign: <span class="function"><span class="keyword">function</span> (<span class="params">target</span>) </span>&#123;</div><div class="line"><span class="meta">        'use strict'</span>;</div><div class="line">        <span class="keyword">if</span> (target === <span class="literal">undefined</span> || target === <span class="literal">null</span>) &#123;</div><div class="line">            <span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">TypeError</span>(<span class="string">'Cannot convert undefined or null to object'</span>);</div><div class="line">        &#125;</div><div class="line"></div><div class="line">        <span class="keyword">var</span> output = <span class="built_in">Object</span>(target);</div><div class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> index = <span class="number">1</span>; index &lt; <span class="built_in">arguments</span>.length; index++) &#123;</div><div class="line">            <span class="keyword">var</span> source = <span class="built_in">arguments</span>[index];</div><div class="line">            <span class="keyword">if</span> (source !== <span class="literal">undefined</span> &amp;&amp; source !== <span class="literal">null</span>) &#123;</div><div class="line">              <span class="keyword">for</span> (<span class="keyword">var</span> nextKey <span class="keyword">in</span> source) &#123;</div><div class="line">                <span class="keyword">if</span> (source.hasOwnProperty(nextKey)) &#123;</div><div class="line">                  output[nextKey] = source[nextKey];</div><div class="line">                &#125;</div><div class="line">              &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        <span class="keyword">return</span> output;</div><div class="line">    &#125;,</div></pre></td></tr></table></figure></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;es6常用的一些&quot;&gt;&lt;a href=&quot;#es6常用的一些&quot; class=&quot;headerlink&quot; title=&quot;es6常用的一些&quot;&gt;&lt;/a&gt;es6常用的一些&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;消除var； 尽可能的使用let;&lt;/li&gt;
+&lt;li&gt;使用箭头函数，如 () -&amp;gt; {}; 箭头函数还在当前域里,注意arguments,this；&lt;/li&gt;
+&lt;li&gt;使用 …; 例如: let {name = ‘’,…ohterInfo} = {name=”kuanglijun”,avatar:’&lt;a href=&quot;http://kuanglijun312.github.io/img/logo.png&amp;#39;,nickname=&amp;quot;harley&amp;quot;}&quot;&gt;http://kuanglijun312.github.io/img/logo.png&amp;#39;,nickname=&amp;quot;harley&amp;quot;}&lt;/a&gt;;&lt;/li&gt;
+&lt;li&gt;函数使用默认参数，例如showLoading = (msg = ‘正在加载中…’) { … other code; }&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;普通对象赋值，比如: &lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; a = &lt;span class=&quot;number&quot;&gt;1&lt;/span&gt;,b =&lt;span class=&quot;number&quot;&gt;2&lt;/span&gt;; &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;span class=&quot;keyword&quot;&gt;let&lt;/span&gt; obj = &amp;#123;a,b&amp;#125;;  &lt;span class=&quot;comment&quot;&gt;//result is obj = &amp;#123;a: 1,b:2 &amp;#125;;&lt;/span&gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;object.assign , array.map等等常用的方法&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;类的实现, 已有类的概念, contructor构造函数&lt;/li&gt;
+&lt;li&gt;Promise, function* ,yield的使用
+    
+    </summary>
+    
+    
       <category term="es6" scheme="https://kuanglijun312.github.io/tags/es6/"/>
+    
+      <category term="js" scheme="https://kuanglijun312.github.io/tags/js/"/>
     
   </entry>
   
@@ -551,11 +551,11 @@
     </summary>
     
     
-      <category term="js" scheme="https://kuanglijun312.github.io/tags/js/"/>
+      <category term="javascript" scheme="https://kuanglijun312.github.io/tags/javascript/"/>
     
       <category term="es6" scheme="https://kuanglijun312.github.io/tags/es6/"/>
     
-      <category term="javascript" scheme="https://kuanglijun312.github.io/tags/javascript/"/>
+      <category term="js" scheme="https://kuanglijun312.github.io/tags/js/"/>
     
   </entry>
   
