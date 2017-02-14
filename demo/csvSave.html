@@ -7,6 +7,10 @@
   <body>
     <a href="javascript:void(0);" download="data.csv" id="export">点击导出csv</a>
     <button id="btn">测试点击自动生成a标签下载</button>
+    <div>
+      <img id="myimg" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MTNENDg2NjRFQUFCMTFFNjk2N0U4QzY5MjJGQjM5N0EiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MTNENDg2NjVFQUFCMTFFNjk2N0U4QzY5MjJGQjM5N0EiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDoxM0Q0ODY2MkVBQUIxMUU2OTY3RThDNjkyMkZCMzk3QSIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDoxM0Q0ODY2M0VBQUIxMUU2OTY3RThDNjkyMkZCMzk3QSIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoIOqDEAAAPGSURBVHjazJhZSFVRFIaPptlIVjaoFWQD2mQ5pCQk0kQzFNFDUfQQNEhFgQ0gQYHUQzYSRBFkFBENNJFFREllKqGpST1o0GiWldGgWdi/YF24rNa+njucqws+hLXPPf5nD2vYIW1tbRZZTP5ny4YNBMkgDaSA4SAKdAXN4COoA2WgBDwBX+y8+N3mfqo/zLJnI8BasBCM9PDcYDCenyOrBlfBUfDW8sHaE9gN7ABrwAAf3j+OWQUOgHzwx5sXhHoYGwPugVwfxblbNNgLbvO28HsG54IzoI9hvAEUgUraPrz/eoBYMBFkgkjld1ngEVjKv/dJ4HxwGXRRxkrBQXCHRXrai/SebDBBGaN9ORsUe7vE8eCUIo5O4mo+vWfbEUdWD46DJLAFtIhxWpnzPOO2BdISXQB9xTMVYAo44cPe+8sHg5a2VowN4Y+1LTAHjBXjNWABeO7nISnm98hQMxWsb1cggjSdrK1i7BO/9LUVGKvh+PhT+HdyAvA4gxs45rnbNmVZ/DXKLHuEj0LYStMPQqL3NfbH36diw5bygXDCIjg8jXbz0f9PQ7pr0WZwsnKa9lvOGYk4InyJHD/VJc4QPkr4hZazdh38Fr4Mk0Cp/D746rDAV0qQTjQJjBO+Sst5o/hYpVRMqsBBsjSzgmPvlRSoCowQvuYgCZQnNtwk8JfwdQ+SQBl3f5gE1is5MhgWq0QPVaDMFpOCIC5MObW1JoHlSgKPcljgcE4Q7lZuEvhQ+CK5SHDSFivF8gOTQGoRXwr/RgfF9QbrhK+MO8D/BSJBN+HvOeGnMn2TQwKpCRsqfAXQ0eqp3DoEmsTYbi7ZA2nTlQ+ntHfaYz0I9RRqdomxXtw8JQRIHLUNl5SAnKtMjlryH+aW0N2GceWR4qe4meAK7z9Z1RTY7UloDywBb8QzcXzCtnNj5Y1RA5YHbhlCFxUIqd60nVQoLAfflSo4jzu8bK6Gwz2ksHjucSr4w0yWwLNo3OshhtutdG5BTX1rK89qNafKFhYWwxkiw8uZpm5vNs5ClV2BFoeCY3wDECi7ybdjo5QxuhyYC5HFdi+PqN2cwzcDdX4Ke8E3ZPS+ZZZ+Z0j79SImKtGuQJflc4eXw92eN1bEWSmVV8OVNTIt/b6QbsEKITLZzhJr1pNvH9I59MRxX+u6YW3gqoQ+hG5YnynNkcuSeMm1pp0uDeZhuUu8FRhoow+9ZghBNMMzQq2OtcdgmqEPoghysqMFurrIRaBRGUvrDAIt3q+zwAfhv9tZBFLBQhdLWXxx8A3cACv+CTAAS5XcKrjy2wMAAAAASUVORK5CYII=">
+      <br><button id="imgBtn">保存图片</button>
+    </div>
     <script>
     document.getElementById('export').addEventListener('click',function(e) {
       console.log(e)
@@ -36,6 +40,24 @@
       a.setAttribute('target','_blank');
       a.setAttribute('download','test.csv');
       triggerClick(a);
+    },true);
+
+    document.getElementById('imgBtn').addEventListener('click',function() {
+      // var a = document.createElement('a');
+      // a.setAttribute('href',document.getElementById('myimg').src);
+      // a.setAttribute('target','_blank');
+      // a.setAttribute('download','a.png');
+      // triggerClick(a);
+      var image_data = document.getElementById('myimg').src;
+      image_data = window.atob(image_data.split(',')[1]);
+      var buffer = new ArrayBuffer(image_data.length);
+      var view = new Uint8Array(buffer);
+      for(var i = 0; i < image_data.length; i ++) {
+        view[i] = image_data.charCodeAt(i) & 0xff;
+      }
+      var blob = new Blob([buffer], {type: 'application/force-download'});
+      var url = window.URL.createObjectURL(blob);
+      location.href = url;
     },true);
     </script>
   </body>

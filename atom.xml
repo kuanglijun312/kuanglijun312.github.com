@@ -189,6 +189,46 @@
   </entry>
   
   <entry>
+    <title>stylus使用</title>
+    <link href="http://kuanglijun312.github.io/2016/06/20/stylus-use/"/>
+    <id>http://kuanglijun312.github.io/2016/06/20/stylus-use/</id>
+    <published>2016-06-20T07:55:29.000Z</published>
+    <updated>2016-09-02T03:12:56.187Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="stylus介绍"><a href="#stylus介绍" class="headerlink" title="stylus介绍"></a>stylus介绍</h3><p>css很多人用sass,less，还有一个stylus，我不太想用sass,less的原因，是由于他们用了ruby，而stylus是使用的nodejs。大家可以google一下<br>文档: <a href="http://stylus-lang.com/" target="_blank" rel="external">官网</a>, <a href="http://www.zhangxinxu.com/jq/stylus/" target="_blank" rel="external">stylus中文版</a>,该翻译的作者博客很多，很牛！</p>
+<a id="more"></a>
+<p>相关语法自己去看吧，下面只是记录一些常用的</p>
+<ol>
+<li><p>&amp;的使用， 字符&amp;指向父选择器</p>
+</li>
+<li><p>定义变量，例如</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="attribute">font-size</span>-<span class="number">12</span>=<span class="number">1.2rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">13</span>=<span class="number">1.3rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">14</span>=<span class="number">1.4rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">16</span>=<span class="number">1.6rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">18</span>=<span class="number">1.8rem</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>使用同级或者上级的变量</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.my-select-arrow</span></div><div class="line">    <span class="attribute">width</span> <span class="number">12px</span> </div><div class="line">    <span class="attribute">height</span> <span class="number">20px</span></div><div class="line">    <span class="attribute">background-size</span> @width @height</div><div class="line">    <span class="attribute">margin-top</span> -<span class="number">12px</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>自定义函数</p>
+<figure class="highlight"><table><tr><td class="code"><pre><div class="line">//底部加红色条动画</div><div class="line">func_hover_bottom_spread(sel,bgcolor = #ed2c2c)</div><div class="line">    &#123;sel&#125;</div><div class="line">        cursor pointer</div><div class="line">        position relative</div><div class="line">        padding-top 6px</div><div class="line">        padding-bottom 6px</div><div class="line">        &amp;:before,&amp;:after</div><div class="line">            content ' '</div><div class="line">            absolute bottom 0</div><div class="line">            height 2px</div><div class="line">            background-color bgcolor</div><div class="line">            width 0</div><div class="line">            transition all .2s animate-func-bezier</div><div class="line">            transform-style preserve-3d</div><div class="line">            backface-visibility hidden</div><div class="line">        &amp;:before</div><div class="line">            left 50%</div><div class="line">        &amp;:after</div><div class="line">            right 50%</div><div class="line">        @media big</div><div class="line">            &amp;:hover::before,&amp;:hover::after</div><div class="line">                width 50%</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>使用:<br><figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="title">func_hover_bottom_spread</span><span class="params">(<span class="string">'.action-hover-bottom-spread'</span>)</span></span> <span class="comment">//对所有的action-hover-bottom-spread,都会有该动画</span></div></pre></td></tr></table></figure></p>
+<p>对选择器使用 {}；</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;stylus介绍&quot;&gt;&lt;a href=&quot;#stylus介绍&quot; class=&quot;headerlink&quot; title=&quot;stylus介绍&quot;&gt;&lt;/a&gt;stylus介绍&lt;/h3&gt;&lt;p&gt;css很多人用sass,less，还有一个stylus，我不太想用sass,less的原因，是由于他们用了ruby，而stylus是使用的nodejs。大家可以google一下&lt;br&gt;文档: &lt;a href=&quot;http://stylus-lang.com/&quot;&gt;官网&lt;/a&gt;, &lt;a href=&quot;http://www.zhangxinxu.com/jq/stylus/&quot;&gt;stylus中文版&lt;/a&gt;,该翻译的作者博客很多，很牛！&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="stylus" scheme="http://kuanglijun312.github.io/tags/stylus/"/>
+    
+      <category term="css" scheme="http://kuanglijun312.github.io/tags/css/"/>
+    
+  </entry>
+  
+  <entry>
     <title>我的一些常用的js方法，备忘</title>
     <link href="http://kuanglijun312.github.io/2016/06/20/my-js-use-func/"/>
     <id>http://kuanglijun312.github.io/2016/06/20/my-js-use-func/</id>
@@ -238,9 +278,9 @@
     </summary>
     
     
-      <category term="es6" scheme="http://kuanglijun312.github.io/tags/es6/"/>
-    
       <category term="js" scheme="http://kuanglijun312.github.io/tags/js/"/>
+    
+      <category term="es6" scheme="http://kuanglijun312.github.io/tags/es6/"/>
     
   </entry>
   
@@ -286,49 +326,9 @@
     </summary>
     
     
-      <category term="es6" scheme="http://kuanglijun312.github.io/tags/es6/"/>
-    
       <category term="js" scheme="http://kuanglijun312.github.io/tags/js/"/>
     
-  </entry>
-  
-  <entry>
-    <title>stylus使用</title>
-    <link href="http://kuanglijun312.github.io/2016/06/20/stylus-use/"/>
-    <id>http://kuanglijun312.github.io/2016/06/20/stylus-use/</id>
-    <published>2016-06-20T07:55:29.000Z</published>
-    <updated>2016-09-02T03:12:56.187Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="stylus介绍"><a href="#stylus介绍" class="headerlink" title="stylus介绍"></a>stylus介绍</h3><p>css很多人用sass,less，还有一个stylus，我不太想用sass,less的原因，是由于他们用了ruby，而stylus是使用的nodejs。大家可以google一下<br>文档: <a href="http://stylus-lang.com/" target="_blank" rel="external">官网</a>, <a href="http://www.zhangxinxu.com/jq/stylus/" target="_blank" rel="external">stylus中文版</a>,该翻译的作者博客很多，很牛！</p>
-<a id="more"></a>
-<p>相关语法自己去看吧，下面只是记录一些常用的</p>
-<ol>
-<li><p>&amp;的使用， 字符&amp;指向父选择器</p>
-</li>
-<li><p>定义变量，例如</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="attribute">font-size</span>-<span class="number">12</span>=<span class="number">1.2rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">13</span>=<span class="number">1.3rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">14</span>=<span class="number">1.4rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">16</span>=<span class="number">1.6rem</span></div><div class="line"><span class="attribute">font-size</span>-<span class="number">18</span>=<span class="number">1.8rem</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>使用同级或者上级的变量</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="selector-class">.my-select-arrow</span></div><div class="line">    <span class="attribute">width</span> <span class="number">12px</span> </div><div class="line">    <span class="attribute">height</span> <span class="number">20px</span></div><div class="line">    <span class="attribute">background-size</span> @width @height</div><div class="line">    <span class="attribute">margin-top</span> -<span class="number">12px</span></div></pre></td></tr></table></figure>
-</li>
-<li><p>自定义函数</p>
-<figure class="highlight"><table><tr><td class="code"><pre><div class="line">//底部加红色条动画</div><div class="line">func_hover_bottom_spread(sel,bgcolor = #ed2c2c)</div><div class="line">    &#123;sel&#125;</div><div class="line">        cursor pointer</div><div class="line">        position relative</div><div class="line">        padding-top 6px</div><div class="line">        padding-bottom 6px</div><div class="line">        &amp;:before,&amp;:after</div><div class="line">            content ' '</div><div class="line">            absolute bottom 0</div><div class="line">            height 2px</div><div class="line">            background-color bgcolor</div><div class="line">            width 0</div><div class="line">            transition all .2s animate-func-bezier</div><div class="line">            transform-style preserve-3d</div><div class="line">            backface-visibility hidden</div><div class="line">        &amp;:before</div><div class="line">            left 50%</div><div class="line">        &amp;:after</div><div class="line">            right 50%</div><div class="line">        @media big</div><div class="line">            &amp;:hover::before,&amp;:hover::after</div><div class="line">                width 50%</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>使用:<br><figure class="highlight stylus"><table><tr><td class="code"><pre><div class="line"><span class="function"><span class="title">func_hover_bottom_spread</span><span class="params">(<span class="string">'.action-hover-bottom-spread'</span>)</span></span> <span class="comment">//对所有的action-hover-bottom-spread,都会有该动画</span></div></pre></td></tr></table></figure></p>
-<p>对选择器使用 {}；</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;stylus介绍&quot;&gt;&lt;a href=&quot;#stylus介绍&quot; class=&quot;headerlink&quot; title=&quot;stylus介绍&quot;&gt;&lt;/a&gt;stylus介绍&lt;/h3&gt;&lt;p&gt;css很多人用sass,less，还有一个stylus，我不太想用sass,less的原因，是由于他们用了ruby，而stylus是使用的nodejs。大家可以google一下&lt;br&gt;文档: &lt;a href=&quot;http://stylus-lang.com/&quot;&gt;官网&lt;/a&gt;, &lt;a href=&quot;http://www.zhangxinxu.com/jq/stylus/&quot;&gt;stylus中文版&lt;/a&gt;,该翻译的作者博客很多，很牛！&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="stylus" scheme="http://kuanglijun312.github.io/tags/stylus/"/>
-    
-      <category term="css" scheme="http://kuanglijun312.github.io/tags/css/"/>
+      <category term="es6" scheme="http://kuanglijun312.github.io/tags/es6/"/>
     
   </entry>
   
@@ -551,11 +551,11 @@
     </summary>
     
     
-      <category term="javascript" scheme="http://kuanglijun312.github.io/tags/javascript/"/>
+      <category term="js" scheme="http://kuanglijun312.github.io/tags/js/"/>
     
       <category term="es6" scheme="http://kuanglijun312.github.io/tags/es6/"/>
     
-      <category term="js" scheme="http://kuanglijun312.github.io/tags/js/"/>
+      <category term="javascript" scheme="http://kuanglijun312.github.io/tags/javascript/"/>
     
   </entry>
   
